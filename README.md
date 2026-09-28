@@ -4,6 +4,8 @@
 
 Site de apresentação e demonstração interativa do projeto acadêmico SeniorLink, preparado para o balcão do 6º Workshop de Educação Continuada em TI da UNICID.
 
+**Site:** [wallacyti.github.io/SeniorLink](https://wallacyti.github.io/SeniorLink/)
+
 ## Abrir agora
 
 A maneira mais simples é abrir `index.html` no navegador com um duplo clique. Todos os recursos visuais e de interação são locais; o site não depende de internet.
@@ -75,13 +77,15 @@ Os ícones ficam embutidos em `index.html` para funcionar também por duplo cliq
 
 Repositório: [wallacyti/SeniorLink](https://github.com/wallacyti/SeniorLink).
 
-- `main`: versão estável do site.
+- `main`: versão estável, publicada automaticamente no GitHub Pages.
 - `develop`: branch para continuar o desenvolvimento.
 - `origin`: conexão HTTPS com o repositório da equipe.
 
 A pasta `.reference` está excluída no `.gitignore`; ela guarda o Navigator original, ferramentas temporárias e capturas de validação. As duas branches partem da primeira versão funcional. As alterações em `develop` podem ser revisadas antes de serem integradas à `main`.
 
-O site é estático e usa caminhos relativos, portanto pode ser servido por GitHub Pages, inclusive em um caminho de projeto como `/SeniorLink/`. Não exige processo de build. Para uma futura publicação, use a raiz que contém `index.html`. O banner e o vídeo em `assets` fazem parte do site e serão públicos se o site for publicado.
+O GitHub Pages está configurado para publicar a raiz `/` da branch `main`, com HTTPS, em [wallacyti.github.io/SeniorLink](https://wallacyti.github.io/SeniorLink/). O site é estático e usa caminhos relativos; não exige processo de build próprio. O arquivo `.nojekyll` mantém os arquivos estáticos sem processamento de Jekyll. Novos envios à `main` iniciam uma nova publicação, que pode levar alguns minutos.
+
+O repositório, o código, o banner e o vídeo são públicos, conforme autorizado pela equipe. A cópia offline continua funcionando de forma independente.
 
 Para continuar o desenvolvimento:
 
@@ -101,6 +105,18 @@ git push
 ```
 
 O `push` da branch `develop` envia o código para revisão. Ele não integra automaticamente as alterações à `main`.
+
+Para publicar uma versão já revisada, quando `main` não tiver alterações divergentes:
+
+```powershell
+git switch main
+git pull --ff-only
+git merge --ff-only develop
+git push origin main
+git switch develop
+```
+
+Se houver histórico divergente, revise a integração antes de publicar; não use envio forçado. Acompanhe a execução **pages build and deployment** na aba [Actions](https://github.com/wallacyti/SeniorLink/actions) do repositório.
 
 ## Verificação de sintaxe
 
