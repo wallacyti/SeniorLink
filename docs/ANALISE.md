@@ -2,7 +2,9 @@
 
 ## Formato final para o balcão
 
-A página inicial foi ajustada ao uso em exposição: uma composição de tela inteira com fundo preto, luz ambiente discreta, celular na mão e seis cenas automáticas. O mockup original do Navigator foi reaproveitado sem editar o bitmap; o aplicativo é uma camada HTML dimensionada sobre a tela do aparelho. O crédito e a licença estão em `THIRD_PARTY_NOTICES.md`.
+A página inicial foi ajustada ao uso em exposição: uma composição de tela inteira com fundo preto, luz ambiente discreta, celular na mão e as 16 telas originais do banner em sequência automática. O mockup original do Navigator foi reaproveitado sem editar o bitmap. Cada tela do banner é enquadrada com `viewBox` em SVG e dimensionada sobre o aparelho; logo, ilustrações e conteúdo vêm diretamente da imagem fornecida. Os arquivos de imagem originais não são alterados. O crédito e a licença estão em `THIRD_PARTY_NOTICES.md`.
+
+A revisão substitui as seis interfaces inicialmente adaptadas pelas 16 telas do material impresso, incluindo os fluxos visuais de login e cadastro. Essas telas são imagens para exposição; o simulador interativo secundário mantém sua implementação própria. A qualidade de ampliação depende da resolução do banner.
 
 As novas referências em vídeo combinam a estética do Navigator com a alternância de telas do SeniorLink. A apresentação usa frases curtas e dispensa rolagem no notebook. O modo exposição oculta os controles após inatividade, oferece tela cheia e mantém a navegação manual disponível.
 

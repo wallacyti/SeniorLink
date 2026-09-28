@@ -9,26 +9,33 @@
   let current = 0, elapsed = 0, lastFrame = 0, animationFrame = 0;
   let playing = !reducedMotion.matches, exhibition = false, ownsFullscreen = false;
   let hideTimer = 0, messageTimer = 0, wakeLock = null;
-  const sceneButtons = [...document.querySelectorAll('.scene-button')];
-  const miniBrand = `<div class="screen-mini-brand"><img src="./assets/mark.svg" alt="">SeniorLink</div>`;
-  const waves = `<svg class="screen-waves" viewBox="0 0 406 140" preserveAspectRatio="none" aria-hidden="true"><path d="M0 28Q80 95 185 60T406 2V140H0Z" fill="#cbece6"/><path d="M0 72Q90 22 200 84T406 43V140H0Z" fill="#86d0cd"/><path d="M0 100Q100 54 211 104T406 83V140H0Z" fill="#39aca8"/></svg>`;
-  const originalLogo = `<svg class="original-logo" viewBox="50 154 125 117" aria-hidden="true"><image href="./assets/mvp-banner.jpeg" width="1434" height="1097"/></svg>`;
-  const screens = {
-    connection: () => `<div class="splash-orbits"></div>${originalLogo}<strong class="splash-name">SeniorLink</strong><span class="splash-tagline">MAIS CONEXÃO PARA<br>TODAS AS FASES DA VIDA</span><span class="splash-rule">${icon('heart')}</span><div class="splash-bottom"><span>Cuidado hoje,<br>mais liberdade amanhã.</span></div>${waves}`,
-    location: () => `${miniBrand}<h2>Perto de quem<br>importa.</h2><p class="subline">Uma conexão que acompanha você.</p><span class="screen-chip">Localização ilustrativa</span><div class="visual-map"><svg viewBox="0 0 406 437" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="406" height="437" fill="#e6eee3"/><path d="M-30 98 450 0M-20 249 430 132M-20 434 440 299M22-30 214 480M255-30 420 440" stroke="#d4e0cf" stroke-width="23"/><path d="M-30 98 450 0M-20 249 430 132M-20 434 440 299M22-30 214 480M255-30 420 440" stroke="white" stroke-width="18"/><path d="M-20 335 440 224M123-20 310 480" stroke="#fafcf8" stroke-width="10"/><path d="M440 19Q290 160 444 244T422 454" fill="none" stroke="#badfe2" stroke-width="45"/><rect x="34" y="247" width="76" height="69" rx="15" fill="#c0d9b5" transform="rotate(-14 65 280)"/><rect x="150" y="78" width="78" height="53" rx="11" fill="#c8dcbd" transform="rotate(-14 180 100)"/><path class="map-route loop-animation" d="M112 388 149 377 121 307 191 287 178 249 219 239"/><circle cx="112" cy="388" r="6" fill="#6eaf94"/></svg><div class="map-person"><img src="./assets/avatar.svg" alt=""></div><span class="map-location-label">Maria está aqui <span>·</span></span></div><div class="map-address">${icon('pin')}<div><strong>Av. das Flores, 123</strong><small>Belém · PA · Endereço fictício</small></div></div><div class="visual-action">${icon('pin')} Compartilhar localização</div><p class="screen-note">Uma prévia do cuidado em família.</p>`,
-    reminders: () => `${miniBrand}<h2>No seu tempo.<br>Na hora certa.</h2><p class="subline">Os pequenos cuidados também importam.</p><div class="time-display">08:00</div><div class="time-caption">${icon('sun')} UM NOVO DIA COMEÇA</div><div class="reminder-visual"><span class="r-icon">${icon('bell')}</span><span><strong>Seu cuidado da manhã</strong><small>Lembrete de exemplo · 08:00</small></span><span class="r-check"></span></div><div class="reminder-visual completed"><span class="r-icon">${icon('check')}</span><span><strong>Beber água</strong><small>Um cuidado concluído</small></span><span class="r-check">${icon('check')}</span></div><div class="reminder-visual"><span class="r-icon">${icon('clock')}</span><span><strong>Hora da caminhada</strong><small>Um tempo para você · 09:00</small></span><span class="r-check"></span></div><div class="reminder-caption">${icon('heart')} Um lembrete de carinho, todos os dias.</div>`,
-    support: () => `${miniBrand}<h2>Você pode<br>contar com alguém.</h2><div class="support-disc">${icon('phone')}<strong>SOS</strong></div><h3>Ajuda a um toque.</h3><p class="support-caption">Seu contato de confiança,<br>perto quando você precisar.</p><div class="contact-visual"><span class="contact-avatar">C</span><span><strong>Carlos</strong><small>Filho · Contato de exemplo</small></span>${icon('phone')}</div><p class="screen-note">Demonstração · Nenhuma ligação real</p>`,
-    learning: () => `${miniBrand}<h2>Aprender.<br>Um passo de cada vez.</h2><p class="subline">Mais confiança para usar a tecnologia.</p><div class="learning-illustration">${icon('book')}<span class="learning-spark">✦</span><span class="learning-small-spark">✧</span></div><div class="lesson-visual">${icon('text')}<span><strong>Aumentar as letras</strong><small>Mais conforto para ler</small></span><span>›</span></div><div class="lesson-visual">${icon('phone')}<span><strong>Fazer uma ligação</strong><small>Fale com quem você gosta</small></span><span>›</span></div><div class="lesson-visual">${icon('users')}<span><strong>Enviar uma mensagem</strong><small>A conversa continua</small></span><span>›</span></div><p class="screen-note">Pequenas descobertas. Novas possibilidades.</p>`,
-    autonomy: () => `${miniBrand}<div class="home-visual-greeting"><div><small>QUE BOM TER VOCÊ AQUI</small><h2>Olá, Maria!</h2><p>Vamos cuidar do seu dia?</p></div><img src="./assets/avatar.svg" alt=""></div><div class="home-visual-banner"><span>${icon('heart')} Um dia de cada vez.</span><strong>Mais cuidado.<br>Mais você.</strong></div><div class="home-visual-grid"><div class="visual-tile blue">${icon('user')}<strong>Meu perfil</strong><small>Sobre você</small></div><div class="visual-tile">${icon('pin')}<strong>Localização</strong><small>Sempre por perto</small></div><div class="visual-tile peach">${icon('bell')}<strong>Lembretes</strong><small>No seu tempo</small></div><div class="visual-tile lilac">${icon('book')}<strong>Aprender</strong><small>Um passo por vez</small></div></div><div class="home-visual-help">${icon('phone')}<span>Preciso de ajuda</span><span>›</span></div><div class="home-visual-nav">${icon('home')}${icon('pin')}${icon('bell')}${icon('user')}</div>`
-  };
+  // Each viewBox frames a screen in the unchanged 1434 × 1097 MVP banner.
+  // The photo's device has different proportions; the full screen fits its display.
   const scenes = [
-    {name:'Conexão',eyebrow:'MAIS CONEXÃO. MAIS VIDA.',heading:'Cuidado hoje.<br><em>Liberdade amanhã.</em>',description:'Mais conexão para todas as fases da vida.',signature:'SIMPLES PARA USAR. FEITO PARA CUIDAR.',floatingKicker:'NOSSA ESSÊNCIA',floatingTitle:'Uma conexão que cuida.',icon:'heart',screen:'connection',className:'splash-screen'},
-    {name:'Localização',eyebrow:'A DISTÂNCIA FICA MENOR.',heading:'Por perto.<br><em>Mesmo de longe.</em>',description:'Quem você ama, a uma conexão de distância.',signature:'LOCALIZAÇÃO E UMA REDE DE CONFIANÇA.',floatingKicker:'PRESENÇA QUE TRANQUILIZA',floatingTitle:'Perto de quem importa.',icon:'pin',screen:'location',className:'screen-page location-screen'},
-    {name:'Lembretes',eyebrow:'CUIDADO QUE FAZ PARTE DO DIA.',heading:'Pequenos cuidados.<br><em>Grandes diferenças.</em>',description:'Um lembrete. Um carinho. Um dia mais leve.',signature:'CADA MOMENTO MERECE ATENÇÃO.',floatingKicker:'NO SEU TEMPO',floatingTitle:'Hora de cuidar de você.',icon:'bell',screen:'reminders',className:'screen-page reminder-screen'},
-    {name:'Apoio',eyebrow:'NINGUÉM PRECISA ESTAR SOZINHO.',heading:'Um toque.<br><em>Alguém por perto.</em>',description:'Sua rede de apoio, quando mais precisar.',signature:'CONFIANÇA É SABER COM QUEM CONTAR.',floatingKicker:'SUA REDE DE APOIO',floatingTitle:'Cuidado que acolhe.',icon:'phone',screen:'support',className:'screen-page support-screen'},
-    {name:'Aprender',eyebrow:'NOVAS DESCOBERTAS, TODOS OS DIAS.',heading:'Aprender conecta.<br><em>Conhecer liberta.</em>',description:'A tecnologia também pode ser simples.',signature:'UM PASSO DE CADA VEZ. NO SEU RITMO.',floatingKicker:'AUTONOMIA DIGITAL',floatingTitle:'Você pode ir além.',icon:'book',screen:'learning',className:'screen-page learning-screen'},
-    {name:'Autonomia',eyebrow:'A VIDA ACONTECE LÁ FORA.',heading:'Mais autonomia.<br><em>Mais vida.</em>',description:'Liberdade para viver. Conexão para cuidar.',signature:'SENIORLINK. TECNOLOGIA QUE APROXIMA.',floatingKicker:'PARA TODAS AS FASES DA VIDA',floatingTitle:'O cuidado acompanha você.',icon:'users',screen:'autonomy',className:'screen-page home-screen'}
+    {name:'Splash Screen',crop:[24,58,168,472],heading:'Cuidado hoje.<br><em>Liberdade amanhã.</em>',description:'Mais conexão para todas as fases da vida.',icon:'heart',tone:'connection'},
+    {name:'Onboarding 1',crop:[219,58,160,471],heading:'Cuidado que aproxima.<br><em>Em todas as fases.</em>',description:'Cuidado hoje, mais liberdade amanhã.',icon:'users',tone:'connection'},
+    {name:'Onboarding 2',crop:[403,58,159,471],heading:'Por perto.<br><em>Mesmo de longe.</em>',description:'Localização em tempo real.',icon:'pin',tone:'location'},
+    {name:'Onboarding 3',crop:[587,58,152,471],heading:'Pequenos cuidados.<br><em>Grandes diferenças.</em>',description:'Lembretes que fazem a diferença.',icon:'bell',tone:'reminders'},
+    {name:'Login',crop:[766,58,148,471],heading:'Bem-vindo<br><em>de volta.</em>',description:'Sua conexão com o cuidado começa aqui.',icon:'user',tone:'connection'},
+    {name:'Cadastro',crop:[938,58,148,471],heading:'Uma conta.<br><em>Mais conexão.</em>',description:'Pessoa idosa e responsável, conectados pelo cuidado.',icon:'users',tone:'connection'},
+    {name:'Tela Inicial',crop:[1111,58,138,471],heading:'Olá, Maria!<br><em>Que bom ter você aqui.</em>',description:'Os cuidados do dia, em um só lugar.',icon:'home',tone:'autonomy'},
+    {name:'Perfil do Idoso',crop:[1272,58,141,471],heading:'Sua história.<br><em>Seu cuidado.</em>',description:'As informações importantes, sempre por perto.',icon:'user',tone:'autonomy'},
+    {name:'Localização',crop:[27,603,158,434],heading:'Por perto.<br><em>Mesmo de longe.</em>',description:'Uma conexão que acompanha quem você ama.',icon:'pin',tone:'location'},
+    {name:'Lembretes',crop:[206,601,166,437],heading:'No seu tempo.<br><em>Na hora certa.</em>',description:'Os pequenos cuidados também importam.',icon:'bell',tone:'reminders'},
+    {name:'Adicionar Lembrete',crop:[394,603,162,435],heading:'Cada cuidado<br><em>tem seu momento.</em>',description:'Lembretes para acompanhar a rotina.',icon:'clock',tone:'reminders'},
+    {name:'Emergência (SOS)',crop:[580,604,157,434],heading:'Um toque.<br><em>Alguém por perto.</em>',description:'Sua rede de apoio, quando mais precisar.',icon:'phone',tone:'support'},
+    {name:'Aprender',crop:[767,604,142,433],heading:'Aprender conecta.<br><em>Conhecer liberta.</em>',description:'Um passo de cada vez. No seu ritmo.',icon:'book',tone:'learning'},
+    {name:'Contatos de Confiança',crop:[929,602,151,436],heading:'Conexões<br><em>em que confiar.</em>',description:'Pessoas que podem ajudar, sempre por perto.',icon:'users',tone:'connection'},
+    {name:'Configurações',crop:[1102,602,148,436],heading:'Do seu jeito.<br><em>No seu ritmo.</em>',description:'Uma experiência pensada para você.',icon:'shield',tone:'autonomy'},
+    {name:'Boas-vindas',crop:[1269,601,145,437],heading:'Tudo pronto!<br><em>Vamos começar.</em>',description:'Agora você faz parte do SeniorLink.',icon:'heart',tone:'connection'}
   ];
+  const navigation = $('.scene-navigation');
+  navigation.innerHTML = scenes.map((scene,index) => `<button class="scene-button" data-scene="${index}" aria-label="Tela ${index + 1}: ${scene.name}" title="${index + 1}. ${scene.name}"><span class="scene-track"><i></i></span><span class="scene-button-label">${String(index + 1).padStart(2,'0')}</span></button>`).join('');
+  const sceneButtons = [...navigation.querySelectorAll('.scene-button')];
+
+  function originalScreen(scene) {
+    return `<svg class="mvp-screen" viewBox="${scene.crop.join(' ')}" preserveAspectRatio="none" aria-hidden="true"><image href="./assets/mvp-banner.jpeg" width="1434" height="1097"/></svg>`;
+  }
 
   function fitDisplay() {
     const viewport = $('#display-viewport');
@@ -49,27 +56,31 @@
     lastFrame = 0;
     const scene = scenes[current];
     stage.dataset.scene = String(current);
-    $('#scene-eyebrow').textContent = scene.eyebrow;
+    stage.dataset.tone = scene.tone;
+    $('#scene-eyebrow').textContent = 'MAIS CONEXÃO PARA TODAS AS FASES DA VIDA';
     $('#scene-heading').innerHTML = scene.heading;
     $('#scene-description').textContent = scene.description;
-    $('#scene-signature').textContent = scene.signature;
+    $('#scene-signature').textContent = 'SENIORLINK. TECNOLOGIA QUE APROXIMA.';
     $('#floating-icon').innerHTML = icon(scene.icon);
-    $('#floating-kicker').textContent = scene.floatingKicker;
-    $('#floating-title').textContent = scene.floatingTitle;
+    $('#floating-kicker').textContent = `TELA ${String(current + 1).padStart(2,'0')} DO MVP`;
+    $('#floating-title').textContent = scene.name;
     $('#rail-label').textContent = scene.name.toUpperCase();
-    $('#rail-number').textContent = `${String(current + 1).padStart(2,'0')} / 06`;
-    $('#handheld').setAttribute('aria-label',`Celular na mão mostrando ${scene.name.toLowerCase()} no SeniorLink. Prévia visual com dados fictícios.`);
-    $('#scene-announcement').textContent = `Cena ${current + 1} de 6: ${scene.name}. ${scene.description}`;
+    $('#rail-number').textContent = `${String(current + 1).padStart(2,'0')} / ${scenes.length}`;
+    $('#handheld').setAttribute('aria-label',`Celular na mão mostrando ${scene.name.toLowerCase()} no SeniorLink. Tela original do banner do MVP. Demonstração visual.`);
+    $('#scene-announcement').textContent = `Tela ${current + 1} de ${scenes.length}: ${scene.name}. ${scene.description}`;
     sceneButtons.forEach((button,i) => {
       button.classList.toggle('active',i === current);
       if (i === current) button.setAttribute('aria-current','true'); else button.removeAttribute('aria-current');
       button.style.setProperty('--progress','0');
     });
+    $('#current-screen-label').textContent = `${String(current + 1).padStart(2,'0')} / ${scenes.length} · ${scene.name}`;
+    const selected = sceneButtons[current];
+    navigation.scrollLeft = selected.offsetLeft - navigation.offsetLeft - (navigation.clientWidth - selected.clientWidth) / 2;
     const container = $('#screen-content');
     [...container.children].forEach(layer => { layer.classList.remove('shown'); layer.classList.add('leaving'); });
     const layer = document.createElement('div');
-    layer.className = `screen-layer ${scene.className}`;
-    layer.innerHTML = screens[scene.screen]();
+    layer.className = 'screen-layer mvp-layer';
+    layer.innerHTML = originalScreen(scene);
     container.append(layer);
     if (!animate || reducedMotion.matches) layer.classList.add('shown');
     else { void layer.offsetWidth; layer.classList.add('shown'); }

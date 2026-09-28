@@ -2,7 +2,7 @@
 
 ## Navigator / awesome-landing-pages
 
-O arquivo `assets/navigator-hand.png` é uma cópia sem alterações de `assets/images/home/phone.png` do template Navigator fornecido pela equipe. A interface SeniorLink é renderizada por HTML e CSS sobre a tela da imagem; o asset original foi preservado.
+O arquivo `assets/navigator-hand.png` é uma cópia sem alterações de `assets/images/home/phone.png` do template Navigator fornecido pela equipe. As telas do banner SeniorLink são enquadradas em SVG e posicionadas por HTML e CSS sobre a tela da imagem; o asset original foi preservado.
 
 Projeto: https://github.com/PaulleDemon/awesome-landing-pages
 

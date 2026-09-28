@@ -29,9 +29,9 @@ O armazenamento de lembretes depende do navegador. `file://`, `http://localhost:
 
 ## Apresentar no balcão
 
-1. Abra o site. As seis cenas passam automaticamente, uma a cada **8,5 segundos**, e a sequência recomeça: conexão, localização, lembretes, apoio, aprendizado e autonomia.
+1. Abra o site. As **16 telas originais do banner** passam automaticamente, uma a cada **8,5 segundos**, na ordem do MVP: abertura, três onboardings, login, cadastro, início, perfil, localização, lembretes, novo lembrete, SOS, aprender, contatos, configurações e boas-vindas. Ao terminar, a sequência recomeça.
 2. Clique em **Modo exposição** para ativar a tela cheia. Os controles somem depois de quatro segundos sem interação; mova o mouse, toque na tela ou use o teclado para mostrá-los novamente.
-3. Use **Pausar**, as setas ou os nomes das cenas para controlar a apresentação. Escolher uma cena manualmente pausa a sequência. Clique em reproduzir para continuar.
+3. Use **Pausar**, as setas ou os números de 01 a 16 para controlar a apresentação. A faixa de números pode ser rolada em telas menores; o nome da tela atual aparece no rodapé. Escolher uma tela manualmente pausa a sequência. Clique em reproduzir para continuar.
 4. **Esc** ou **Sair da exposição** retorna à visualização normal. A tecla Espaço também alterna reprodução/pausa quando o foco não está em um botão ou link; as setas do teclado mudam a cena.
 5. Clique em **Explorar o app** para abrir o simulador interativo. Ele continua disponível com as visões de pessoa idosa e familiar, lembretes, tutoriais e SOS simulado.
 
@@ -42,8 +42,8 @@ No simulador, **Aumentar letras** amplia o conteúdo do celular e **Reiniciar** 
 ## O que está implementado
 
 - Página inicial com fundo preto, iluminação sutil, celular em perspectiva e telas animadas.
-- Seis cenas em loop, navegação manual, pausa, modo exposição e controles que se ocultam automaticamente.
-- Marca original do banner exibida na tela de abertura.
+- As 16 telas do banner em loop, navegação manual, pausa, modo exposição e controles que se ocultam automaticamente.
+- Logo, ilustrações, textos, cores e elementos das telas preservados pela exibição do próprio banner.
 - Página secundária responsiva com o simulador e os detalhes do projeto.
 - Navegação entre início, perfil, localização, lembretes, aprendizado, SOS e contatos.
 - Visões demonstrativas de Maria (pessoa idosa) e Carlos (familiar).
@@ -56,7 +56,7 @@ No simulador, **Aumentar letras** amplia o conteúdo do celular e **Reiniciar** 
 
 ## Limites desta versão
 
-Este é um **protótipo para apresentação**, não um serviço operacional de cuidado. O mapa é um cenário fixo desenhado em SVG. Não há GPS, autenticação, cadastro real, banco de dados, envio de notificações, ligações ou acionamento de emergência. A ficha de Maria e os contatos são fictícios. Os lembretes não devem ser usados para organizar medicação real.
+Este é um **protótipo para apresentação**, não um serviço operacional de cuidado. A página inicial exibe imagens das 16 telas do MVP; os botões dentro delas fazem parte das imagens. A nitidez é limitada à resolução do banner fornecido, e as telas são dimensionadas para caber no celular do Navigator. O simulador em `explorar.html` continua sendo uma adaptação interativa, com layout próprio e mapa fixo em SVG. Não há GPS, autenticação, cadastro real, banco de dados, envio de notificações, ligações ou acionamento de emergência. A ficha de Maria e os contatos são fictícios. Os lembretes não devem ser usados para organizar medicação real.
 
 O armazenamento local contém apenas os exemplos adicionados na demonstração. Não existe envio de dados a um servidor. O modo familiar compartilha o mesmo cenário local da pessoa idosa; não representa sincronização entre contas.
 
@@ -137,6 +137,6 @@ Os fluxos de interação e layouts foram verificados em navegador Chromium/Edge,
 
 O conteúdo foi desenvolvido a partir do roteiro, do banner e do vídeo fornecidos pela equipe SeniorLink em `Downloads\SeniorLink`. Os originais nessa pasta foram preservados.
 
-A apresentação utiliza o mockup de mão e celular do template **Navigator**, do conjunto [awesome-landing-pages de PaulleDemon](https://github.com/PaulleDemon/awesome-landing-pages). A imagem original foi preservada e a tela SeniorLink é composta por HTML e CSS sobre ela. O crédito e a licença MIT estão em `THIRD_PARTY_NOTICES.md`.
+A apresentação utiliza o mockup de mão e celular do template **Navigator**, do conjunto [awesome-landing-pages de PaulleDemon](https://github.com/PaulleDemon/awesome-landing-pages). A imagem original foi preservada e cada tela SeniorLink é enquadrada em SVG sobre ela, usando o banner original sem alterar o arquivo. O crédito e a licença MIT estão em `THIRD_PARTY_NOTICES.md`.
 
-A sequência visual combina esse mockup com a referência de telas automáticas enviada pela equipe. A abertura usa a marca original do banner por enquadramento visual em SVG. A marca vetorial simplificada usada na navegação e o avatar foram desenhados em SVG. Os novos vídeos enviados como referência e a captura da conversa não foram incorporados aos arquivos públicos.
+A sequência visual combina esse mockup com as 16 telas da imagem enviada pela equipe. A marca vetorial simplificada usada na navegação e o avatar do simulador foram desenhados em SVG. Os novos vídeos enviados como referência e a captura da conversa não foram incorporados aos arquivos públicos.
