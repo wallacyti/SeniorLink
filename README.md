@@ -2,7 +2,7 @@
 
 **Cuidado hoje, mais liberdade amanhã.**
 
-Site de apresentação e demonstração interativa do projeto acadêmico SeniorLink, preparado para o balcão do 6º Workshop de Educação Continuada em TI da UNICID.
+Apresentação visual e demonstração interativa do projeto acadêmico SeniorLink, preparadas para o balcão do 6º Workshop de Educação Continuada em TI da UNICID. A página inicial é uma vitrine animada para ficar passando no notebook, com o celular na mão do Navigator, telas do SeniorLink e frases curtas.
 
 **Site:** [wallacyti.github.io/SeniorLink](https://wallacyti.github.io/SeniorLink/)
 
@@ -29,19 +29,22 @@ O armazenamento de lembretes depende do navegador. `file://`, `http://localhost:
 
 ## Apresentar no balcão
 
-1. Abra o site e clique em **Experimentar o app**.
-2. Use as opções **Sou pessoa idosa** e **Sou familiar** para mostrar as duas perspectivas.
-3. Clique em **Apresentação automática** para alternar as seis telas principais a cada 8 segundos.
-4. Use o ícone de tela cheia ao lado do botão para destacar a demonstração. Saia pelo mesmo botão ou pela tecla Esc.
-5. Ao interagir, a apresentação automática pausa. Ela também pausa quando a aba fica em segundo plano.
-6. **Aumentar letras** amplia o texto do aplicativo. O conteúdo do celular pode ser rolado quando necessário.
-7. Antes da próxima apresentação, use **Reiniciar** e confirme para restaurar os três lembretes iniciais.
+1. Abra o site. As seis cenas passam automaticamente, uma a cada **8,5 segundos**, e a sequência recomeça: conexão, localização, lembretes, apoio, aprendizado e autonomia.
+2. Clique em **Modo exposição** para ativar a tela cheia. Os controles somem depois de quatro segundos sem interação; mova o mouse, toque na tela ou use o teclado para mostrá-los novamente.
+3. Use **Pausar**, as setas ou os nomes das cenas para controlar a apresentação. Escolher uma cena manualmente pausa a sequência. Clique em reproduzir para continuar.
+4. **Esc** ou **Sair da exposição** retorna à visualização normal. A tecla Espaço também alterna reprodução/pausa quando o foco não está em um botão ou link; as setas do teclado mudam a cena.
+5. Clique em **Explorar o app** para abrir o simulador interativo. Ele continua disponível com as visões de pessoa idosa e familiar, lembretes, tutoriais e SOS simulado.
 
-O banner e o vídeo originais estão em **O projeto → Veja de onde tudo começou**. O vídeo é local e sem áudio.
+A página respeita a preferência do sistema por movimento reduzido; nesse caso, começa pausada. Ao trocar de aba, suspende a animação e conserva o ponto da apresentação. O modo exposição solicita que a tela permaneça ativa quando o navegador oferece essa possibilidade.
+
+No simulador, **Aumentar letras** amplia o conteúdo do celular e **Reiniciar** restaura os lembretes de exemplo. O banner e o vídeo originais estão em **O projeto → Veja de onde tudo começou**. O vídeo é local e sem áudio.
 
 ## O que está implementado
 
-- Página responsiva de apresentação do projeto.
+- Página inicial com fundo preto, iluminação sutil, celular em perspectiva e telas animadas.
+- Seis cenas em loop, navegação manual, pausa, modo exposição e controles que se ocultam automaticamente.
+- Marca original do banner exibida na tela de abertura.
+- Página secundária responsiva com o simulador e os detalhes do projeto.
 - Navegação entre início, perfil, localização, lembretes, aprendizado, SOS e contatos.
 - Visões demonstrativas de Maria (pessoa idosa) e Carlos (familiar).
 - Criação, filtro e conclusão de lembretes, com armazenamento local no navegador quando permitido.
@@ -60,18 +63,22 @@ O armazenamento local contém apenas os exemplos adicionados na demonstração. 
 ## Estrutura
 
 ```text
-index.html              Página e ícones SVG embutidos
-index.js                Navegação e estado da demonstração
-css/index.css           Identidade visual e responsividade
-assets/                 Marca vetorial, avatar, banner e vídeo
+index.html              Apresentação visual para exposição
+showcase.js             Cenas, transições, controles e reprodução
+css/showcase.css        Cenário, perspectiva e composição das telas
+explorar.html           Site detalhado e simulador interativo
+index.js                Navegação e estado do simulador
+css/index.css           Identidade visual do simulador
+assets/                 Mockup Navigator, marca, avatar, banner e vídeo
 scripts/serve.mjs        Servidor local sem dependências
 docs/ANALISE.md          Análise do Navigator e decisões do projeto
 docs/VALIDACAO.md        Verificações realizadas
+THIRD_PARTY_NOTICES.md   Crédito e licença do mockup Navigator
 .nojekyll               Suporte à publicação estática no GitHub Pages
 .reference/             Referências originais e QA locais (ignorados pelo Git)
 ```
 
-Os ícones ficam embutidos em `index.html` para funcionar também por duplo clique. `assets/icons.svg` mantém o catálogo-fonte correspondente. Ao modificar um ícone, mantenha os dois sincronizados.
+Os ícones ficam embutidos nas duas páginas HTML para funcionar também por duplo clique. `assets/icons.svg` mantém o catálogo-fonte correspondente. Ao modificar um ícone, mantenha as cópias sincronizadas.
 
 ## Repositório e publicação
 
@@ -130,4 +137,6 @@ Os fluxos de interação e layouts foram verificados em navegador Chromium/Edge,
 
 O conteúdo foi desenvolvido a partir do roteiro, do banner e do vídeo fornecidos pela equipe SeniorLink em `Downloads\SeniorLink`. Os originais nessa pasta foram preservados.
 
-A referência de composição foi o template **Navigator**, do conjunto [awesome-landing-pages de PaulleDemon](https://github.com/PaulleDemon/awesome-landing-pages), cujo pacote fornecido declara licença MIT. A implementação desta versão foi reescrita com HTML, CSS e JavaScript locais. Os assets automotivos, logotipos de terceiros e textos genéricos do Navigator não foram usados no site final. A marca vetorial simplificada e o avatar desta versão foram desenhados em SVG; o banner mantém a identidade visual original enviada pela equipe.
+A apresentação utiliza o mockup de mão e celular do template **Navigator**, do conjunto [awesome-landing-pages de PaulleDemon](https://github.com/PaulleDemon/awesome-landing-pages). A imagem original foi preservada e a tela SeniorLink é composta por HTML e CSS sobre ela. O crédito e a licença MIT estão em `THIRD_PARTY_NOTICES.md`.
+
+A sequência visual combina esse mockup com a referência de telas automáticas enviada pela equipe. A abertura usa a marca original do banner por enquadramento visual em SVG. A marca vetorial simplificada usada na navegação e o avatar foram desenhados em SVG. Os novos vídeos enviados como referência e a captura da conversa não foram incorporados aos arquivos públicos.

@@ -1,5 +1,15 @@
 # Análise e transformação: Navigator → SeniorLink
 
+## Formato final para o balcão
+
+A página inicial foi ajustada ao uso em exposição: uma composição de tela inteira com fundo preto, luz ambiente discreta, celular na mão e seis cenas automáticas. O mockup original do Navigator foi reaproveitado sem editar o bitmap; o aplicativo é uma camada HTML dimensionada sobre a tela do aparelho. O crédito e a licença estão em `THIRD_PARTY_NOTICES.md`.
+
+As novas referências em vídeo combinam a estética do Navigator com a alternância de telas do SeniorLink. A apresentação usa frases curtas e dispensa rolagem no notebook. O modo exposição oculta os controles após inatividade, oferece tela cheia e mantém a navegação manual disponível.
+
+O simulador e a apresentação detalhada continuam em `explorar.html`, acessíveis pelo botão “Explorar o app”. Os vídeos recentes e a captura de conversa serviram como referências locais de direção visual e não foram incluídos na publicação.
+
+As seções abaixo registram a análise da base e a construção do simulador preservado.
+
 ## Materiais analisados
 
 - `Downloads/SeniorLink/navigator.zip`: estrutura, HTML, JavaScript, folhas de estilo, configuração Tailwind, package.json, readme e conjunto de assets.

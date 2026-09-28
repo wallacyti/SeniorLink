@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#092d32">
-  <title>SeniorLink — Cuidado hoje, mais liberdade amanhã</title>
-  <meta name="description" content="Conheça o SeniorLink: um projeto de cuidado, conexão e autonomia para pessoas idosas. Experimente nossa demonstração interativa.">
+  <meta name="theme-color" content="#070909">
+  <title>SeniorLink — Cuidado em movimento</title>
+  <meta name="description" content="Cuidado hoje, mais liberdade amanhã. Conheça o SeniorLink em uma apresentação visual sobre conexão, cuidado e autonomia.">
+  <meta property="og:title" content="SeniorLink — Cuidado hoje, mais liberdade amanhã">
+  <meta property="og:description" content="Tecnologia que aproxima. Uma apresentação visual do projeto SeniorLink.">
+  <meta property="og:type" content="website">
   <link rel="icon" href="./assets/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./css/index.css">
-  <script src="./index.js" defer></script>
+  <link rel="stylesheet" href="./css/showcase.css">
+  <script src="./showcase.js" defer></script>
 </head>
 <body>
-<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
 <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
 <symbol id="pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
 <symbol id="bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></symbol>
@@ -36,99 +39,55 @@
 <symbol id="text" viewBox="0 0 24 24"><path d="m2 20 6-16 6 16M4 15h8m3 5 4-11 4 11m-6-4h4"/></symbol>
 </defs></svg>
 
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#inicio" aria-label="SeniorLink — início"><img src="./assets/mark.svg" width="40" height="40" alt=""><span>Senior<span class="brand-light">Link</span><span class="brand-dot">.</span></span></a>
-      <button class="menu-toggle icon-button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu"><svg class="icon"><use href="#menu"/></svg></button>
-      <nav id="site-nav" aria-label="Navegação principal">
-        <a href="#recursos">O que oferecemos</a><a href="#como-funciona">Como funciona</a><a href="#projeto">O projeto</a>
-        <a class="button button-small button-mint" href="#demonstracao">Experimentar o app <svg class="icon"><use href="#arrow"/></svg></a>
+  <a class="skip-link" href="#showcase-controls">Pular para os controles da apresentação</a>
+  <main class="showcase" id="showcase" data-scene="0">
+    <div class="ambient" aria-hidden="true"><div class="ambient-light"></div><div class="ambient-grid"></div><span class="ambient-word">SENIORLINK</span></div>
+    <header class="showcase-header exhibition-ui">
+      <a class="brand" href="./index.html" aria-label="SeniorLink — início"><img src="./assets/mark.svg" width="34" height="34" alt=""><span>Senior<span>Link</span><b>.</b></span></a>
+      <span class="header-caption">TECNOLOGIA QUE APROXIMA</span>
+      <div class="header-actions"><a href="./explorar.html#demonstracao" class="explore-link">Explorar o app <svg class="icon"><use href="#arrow"/></svg></a><button id="exhibition-button" class="exhibition-button" aria-pressed="false"><svg class="icon"><use href="#expand"/></svg><span>Modo exposição</span></button></div>
+    </header>
+
+    <section class="stage" aria-label="Apresentação visual do SeniorLink">
+      <div class="stage-copy" id="stage-copy">
+        <div class="scene-eyebrow"><span class="live-dot"></span><span id="scene-eyebrow">MAIS CONEXÃO. MAIS VIDA.</span></div>
+        <h1 id="scene-heading">Cuidado hoje.<br><em>Liberdade amanhã.</em></h1>
+        <p id="scene-description">Mais conexão para todas as fases da vida.</p>
+        <div class="scene-signature"><span class="signature-line"></span><span id="scene-signature">SIMPLES PARA USAR. FEITO PARA CUIDAR.</span></div>
+      </div>
+
+      <div class="device-stage" id="device-stage">
+        <div class="device-halo" aria-hidden="true"></div><div class="device-shadow" aria-hidden="true"></div>
+        <div class="device-entrance"><div class="handheld" id="handheld" role="img" aria-label="Celular na mão exibindo a apresentação do SeniorLink">
+          <img class="hand-image" src="./assets/navigator-hand.png" alt="" width="1080" height="1080" draggable="false" fetchpriority="high">
+          <div class="display-viewport" id="display-viewport" aria-hidden="true"><div class="display-canvas" id="display-canvas">
+            <div class="screen-status"><span>9:41</span><span class="screen-camera"></span><span class="screen-signals">▮▮▮ &nbsp;▰</span></div>
+            <div class="screen-content" id="screen-content"><div class="screen-layer splash-screen shown"><div class="splash-orbits"></div><img class="splash-fallback-logo" src="./assets/mark.svg" alt=""><strong class="splash-name">SeniorLink</strong><span class="splash-tagline">MAIS CONEXÃO PARA<br>TODAS AS FASES DA VIDA</span><div class="splash-bottom"><span>Cuidado hoje,<br>mais liberdade amanhã.</span></div></div></div>
+            <div class="screen-home-indicator"></div>
+          </div></div>
+        </div></div>
+        <div class="floating-feature" id="floating-feature" aria-hidden="true"><span class="floating-feature-icon" id="floating-icon"><svg class="icon"><use href="#heart"/></svg></span><span><small id="floating-kicker">NOSSA ESSÊNCIA</small><strong id="floating-title">Uma conexão que cuida.</strong></span><span class="feature-spark">✦</span></div>
+      </div>
+
+      <div class="scene-rail" aria-hidden="true"><span id="rail-label">CONEXÃO</span><span class="rail-line"></span><span id="rail-number">01 / 06</span></div>
+    </section>
+
+    <footer class="showcase-footer exhibition-ui" id="showcase-controls" aria-label="Controles da apresentação">
+      <nav class="scene-navigation" aria-label="Escolher cena">
+        <button class="scene-button active" data-scene="0" aria-label="Cena 1: Conexão" aria-current="true"><span class="scene-track"><i></i></span><span class="scene-button-label"><small>01</small> Conexão</span></button>
+        <button class="scene-button" data-scene="1" aria-label="Cena 2: Localização"><span class="scene-track"><i></i></span><span class="scene-button-label"><small>02</small> Localização</span></button>
+        <button class="scene-button" data-scene="2" aria-label="Cena 3: Lembretes"><span class="scene-track"><i></i></span><span class="scene-button-label"><small>03</small> Lembretes</span></button>
+        <button class="scene-button" data-scene="3" aria-label="Cena 4: Apoio"><span class="scene-track"><i></i></span><span class="scene-button-label"><small>04</small> Apoio</span></button>
+        <button class="scene-button" data-scene="4" aria-label="Cena 5: Aprender"><span class="scene-track"><i></i></span><span class="scene-button-label"><small>05</small> Aprender</span></button>
+        <button class="scene-button" data-scene="5" aria-label="Cena 6: Autonomia"><span class="scene-track"><i></i></span><span class="scene-button-label"><small>06</small> Autonomia</span></button>
       </nav>
-    </div>
-  </header>
-  <main id="conteudo">
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow hero-eyebrow"><span class="status-dot"></span> TECNOLOGIA QUE APROXIMA</div>
-          <h1>Cuidado hoje,<br>mais liberdade<br><span>amanhã.</span></h1>
-          <p>Estar perto vai além da distância. Mais segurança para quem você ama e mais autonomia para viver cada momento.</p>
-          <div class="hero-actions"><a href="#demonstracao" class="button button-mint">Conheça na prática <svg class="icon"><use href="#arrow"/></svg></a><a href="#como-funciona" class="text-link"><span class="play-circle"><svg class="icon"><use href="#play"/></svg></span> Como funciona</a></div>
-          <div class="hero-reassurance"><span class="mini-avatars"><span>M</span><span>C</span><span>A</span></span><span>Pessoas idosas, familiares e cuidadores.<br><strong>Uma conexão que cuida.</strong></span></div>
-        </div>
-        <div class="hero-art" aria-label="Prévia da tela inicial do aplicativo SeniorLink">
-          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-dot"></div>
-          <div class="floating-note location-note"><span class="note-icon"><svg class="icon"><use href="#pin"/></svg></span><span><strong>Mais perto, mesmo de longe.</strong><small>Localização e tranquilidade</small></span><span class="note-check">✓</span></div>
-          <div class="phone hero-phone">
-            <div class="phone-camera"></div><div class="phone-status"><span>9:41</span><span>▮▮▮ &nbsp;▰</span></div>
-            <div class="preview-app">
-              <div class="preview-brand"><img src="./assets/mark.svg" width="23" height="23" alt="">SeniorLink</div>
-              <div class="app-greeting"><div><small>QUE BOM TER VOCÊ AQUI</small><h3>Olá, Maria! <span class="greeting-sun">☀</span></h3><p>Vamos cuidar do seu dia?</p></div><img src="./assets/avatar.svg" alt="Avatar ilustrado de Maria" width="53" height="53"></div>
-              <div class="day-card"><span><svg class="icon"><use href="#heart"/></svg> Um dia de cada vez.</span><strong>Mais cuidado.<br>Mais você.</strong><span class="day-card-art">♡</span></div>
-              <div class="app-tile-grid"><div class="app-tile blue"><svg class="icon"><use href="#user"/></svg><strong>Meu perfil</strong><small>Sobre você</small></div><div class="app-tile mint"><svg class="icon"><use href="#pin"/></svg><strong>Localização</strong><small>Sempre por perto</small></div><div class="app-tile peach"><svg class="icon"><use href="#bell"/></svg><strong>Lembretes</strong><small>No seu tempo</small></div><div class="app-tile lilac"><svg class="icon"><use href="#book"/></svg><strong>Aprender</strong><small>Um passo por vez</small></div></div>
-              <div class="preview-sos"><span class="sos-small"><svg class="icon"><use href="#phone"/></svg></span><div><strong>Preciso de ajuda</strong><small>Seu contato de confiança</small></div><span>›</span></div>
-            </div>
-            <div class="preview-bottom"><span><svg class="icon"><use href="#home"/></svg>Início</span><span><svg class="icon"><use href="#pin"/></svg>Localização</span><span><svg class="icon"><use href="#bell"/></svg>Lembretes</span><span><svg class="icon"><use href="#user"/></svg>Perfil</span></div>
-            <div class="phone-handle"></div>
-          </div>
-          <div class="floating-note reminder-note"><span class="note-icon peach"><svg class="icon"><use href="#bell"/></svg></span><span><small>UM LEMBRETE DE CARINHO</small><strong>Hora de cuidar de você.</strong></span></div>
-          <span class="art-caption">SIMPLES PARA USAR. FEITO PARA CUIDAR.</span>
-        </div>
-      </div>
-      <div class="container hero-bottom"><span>MAIS CONEXÃO PARA TODAS AS FASES DA VIDA</span><a href="#recursos">Descubra o SeniorLink <span>↓</span></a></div>
-    </section>
-
-    <section class="section resources" id="recursos">
-      <div class="container">
-        <div class="section-intro"><div><span class="eyebrow">CUIDADO EM CADA DETALHE</span><h2>Viver com autonomia.<br>Contar com quem importa.</h2></div><p>O essencial reunido em um só lugar, com uma experiência simples, acolhedora e pensada para o dia a dia.</p></div>
-        <div class="feature-grid">
-          <a class="feature-card feature-location" href="#demonstracao" data-open-screen="location"><div class="feature-top"><span class="feature-icon mint"><svg class="icon"><use href="#pin"/></svg></span><span class="circle-arrow">↗</span></div><h3>Perto, onde estiver.</h3><p>Uma proposta de localização compartilhada com as pessoas de confiança.</p><div class="mini-map" aria-hidden="true"><span class="map-street street-1"></span><span class="map-street street-2"></span><span class="map-street street-3"></span><span class="map-park"></span><span class="mini-map-pin"><img src="./assets/avatar.svg" width="43" height="43" alt=""></span><span class="map-label">Maria está aqui <i></i></span></div></a>
-          <a class="feature-card" href="#demonstracao" data-open-screen="reminders"><div class="feature-top"><span class="feature-icon peach"><svg class="icon"><use href="#bell"/></svg></span><span class="circle-arrow">↗</span></div><h3>Um cuidado de cada vez.</h3><p>Lembretes para os compromissos e os pequenos cuidados que fazem diferença.</p><div class="sample-reminder"><span class="sample-clock">09:00</span><span>Hora da caminhada<small>Um tempo para você</small></span><span class="round-check">✓</span></div></a>
-          <a class="feature-card" href="#demonstracao" data-open-screen="sos"><div class="feature-top"><span class="feature-icon rose"><svg class="icon"><use href="#heart"/></svg></span><span class="circle-arrow">↗</span></div><h3>Ajuda a um toque.</h3><p>Acesso fácil a familiares e contatos de confiança quando mais precisar.</p><div class="help-illustration" aria-hidden="true"><span class="help-ring"><svg class="icon"><use href="#phone"/></svg></span><span class="help-line"></span><span class="contact-initial">C</span><span>Carlos<small>Seu contato de confiança</small></span></div></a>
-          <a class="feature-card compact-feature" href="#demonstracao" data-open-screen="profile"><span class="feature-icon blue"><svg class="icon"><use href="#user"/></svg></span><div><h3>Sua história, à mão.</h3><p>Perfil com informações importantes e ficha de saúde de fácil acesso.</p></div><span>↗</span></a>
-          <a class="feature-card compact-feature" href="#demonstracao" data-open-screen="learn"><span class="feature-icon lilac"><svg class="icon"><use href="#book"/></svg></span><div><h3>Aprender é ganhar liberdade.</h3><p>Passos simples para usar o celular com mais confiança e independência.</p></div><span>↗</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="how-section section" id="como-funciona"><div class="container how-grid"><div><span class="eyebrow">UMA REDE DE CUIDADO</span><h2>A conexão começa<br>com um passo simples.</h2><p>O SeniorLink foi pensado para acompanhar a pessoa idosa e aproximar quem participa do seu cuidado.</p><a class="text-link dark-link" href="#demonstracao">Explore essa experiência <svg class="icon"><use href="#arrow"/></svg></a></div><ol class="steps"><li><span>01</span><div><h3>Um perfil que acolhe</h3><p>Informações importantes organizadas para facilitar a rotina.</p></div></li><li><span>02</span><div><h3>Pessoas que fazem parte</h3><p>Familiares e cuidadores formam uma rede de confiança.</p></div></li><li><span>03</span><div><h3>Mais autonomia, todos os dias</h3><p>Lembretes, aprendizado e ajuda fácil de encontrar.</p></div></li></ol></div></section>
-
-    <section class="demo-section section" id="demonstracao" aria-labelledby="demo-title">
-      <div class="container">
-        <div class="demo-heading"><div><span class="eyebrow">DO PROJETO PARA A SUA MÃO</span><h2 id="demo-title">Pode tocar. Pode explorar.</h2><p>Conheça o SeniorLink por dentro, no seu ritmo.</p></div><span class="demo-pill"><span class="status-dot"></span> Demonstração interativa</span></div>
-        <div class="demo-layout">
-          <div class="demo-controls">
-            <div class="role-switch" aria-label="Escolha a visão da demonstração"><button type="button" data-role="senior" class="active" aria-pressed="true">Sou pessoa idosa</button><button type="button" data-role="family" aria-pressed="false">Sou familiar</button></div>
-            <div class="screen-selectors" aria-label="Telas do aplicativo">
-              <button class="screen-selector active" data-screen="home" aria-pressed="true"><span class="selector-number">01</span><span><strong>Seu dia, mais simples</strong><small>Uma tela inicial com o essencial</small></span><svg class="icon"><use href="#arrow"/></svg></button>
-              <button class="screen-selector" data-screen="location" aria-pressed="false"><span class="selector-number">02</span><span><strong>Uma conexão que aproxima</strong><small>Explore a localização de exemplo</small></span><svg class="icon"><use href="#arrow"/></svg></button>
-              <button class="screen-selector" data-screen="reminders" aria-pressed="false"><span class="selector-number">03</span><span><strong>Na hora certa</strong><small>Crie e conclua um lembrete</small></span><svg class="icon"><use href="#arrow"/></svg></button>
-              <button class="screen-selector" data-screen="learn" aria-pressed="false"><span class="selector-number">04</span><span><strong>Pequenos passos, novas descobertas</strong><small>Experimente um tutorial</small></span><svg class="icon"><use href="#arrow"/></svg></button>
-              <button class="screen-selector" data-screen="sos" aria-pressed="false"><span class="selector-number">05</span><span><strong>Conte com alguém</strong><small>Conheça o fluxo de ajuda</small></span><svg class="icon"><use href="#arrow"/></svg></button>
-              <button class="screen-selector" data-screen="profile" aria-pressed="false"><span class="selector-number">06</span><span><strong>Cuidado com a sua história</strong><small>Veja um perfil de exemplo</small></span><svg class="icon"><use href="#arrow"/></svg></button>
-            </div>
-            <div class="presentation-controls"><button id="tour-button" class="button button-outline" aria-pressed="false"><svg class="icon"><use href="#play"/></svg><span>Apresentação automática</span></button><button id="fullscreen-button" class="icon-button" aria-label="Abrir demonstração em tela cheia" title="Tela cheia"><svg class="icon"><use href="#expand"/></svg></button></div>
-            <p class="demo-disclaimer">Esta é uma experiência de demonstração com dados fictícios. Localização, ligações e SOS são simulados.</p>
-          </div>
-          <div class="demo-device-area">
-            <div class="device-label"><span class="status-dot"></span> SEU SENIORLINK</div>
-            <div class="phone demo-phone" id="demo-phone"><div class="phone-camera"></div><div class="phone-status"><span>9:41</span><span>▮▮▮ &nbsp;▰</span></div><div class="demo-app" id="app-screen" aria-label="Aplicativo de demonstração"></div><nav class="app-bottom" aria-label="Navegação do aplicativo"><button data-screen="home" aria-label="Início do aplicativo"><svg class="icon"><use href="#home"/></svg><span>Início</span></button><button data-screen="location" aria-label="Localização no aplicativo"><svg class="icon"><use href="#pin"/></svg><span>Localização</span></button><button data-screen="reminders" aria-label="Lembretes no aplicativo"><svg class="icon"><use href="#bell"/></svg><span>Lembretes</span></button><button data-screen="profile" aria-label="Perfil no aplicativo"><svg class="icon"><use href="#user"/></svg><span>Perfil</span></button></nav><div class="phone-handle"></div></div>
-            <div class="demo-under-phone"><button id="large-text-button" aria-pressed="false"><svg class="icon"><use href="#text"/></svg> Aumentar letras</button><button id="reset-button"><svg class="icon"><use href="#refresh"/></svg> Reiniciar</button></div>
-          </div>
-        </div>
-        <noscript><p class="noscript-message">Ative o JavaScript para experimentar o aplicativo. Você também pode conhecer as telas no banner original abaixo.</p></noscript>
-      </div>
-      <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-    </section>
-
-    <section class="section project-section" id="projeto"><div class="container project-grid"><div class="project-visual"><div class="connection-art" aria-hidden="true"><span class="connection-person p-one">M</span><span class="connection-person p-two">C</span><span class="connection-person p-three">A</span><div class="connection-center"><img src="./assets/mark.svg" width="95" height="95" alt=""></div><svg viewBox="0 0 360 260"><path d="M80 70Q180 50 180 130T280 205M180 130 290 60"/></svg></div><span>TECNOLOGIA + ACESSIBILIDADE + CUIDADO</span></div><div class="project-copy"><span class="eyebrow">UM PROJETO COM PROPÓSITO</span><h2>Mais do que conectar.<br>É sobre estar presente.</h2><p>O SeniorLink nasce da vontade de tornar a tecnologia uma aliada no cuidado com pessoas idosas, respeitando sua autonomia e aproximando sua rede de apoio.</p><p>Além do aplicativo, nossa proposta inclui orientação para que pessoas idosas e responsáveis aprendam a usar a tecnologia com segurança e confiança.</p><div class="academic-tag"><svg class="icon"><use href="#book"/></svg><span>Projeto acadêmico · UNICID<small>6º Workshop de Educação Continuada em TI</small></span></div><button class="text-link dark-link" id="materials-button">Veja de onde tudo começou <svg class="icon"><use href="#arrow"/></svg></button></div></div></section>
-
-    <section class="section faq-section"><div class="container faq-grid"><div><span class="eyebrow">VAMOS CONVERSAR?</span><h2>Um pouco mais<br>sobre o SeniorLink.</h2></div><div class="faq-list"><details><summary>Para quem o SeniorLink foi pensado?<span>+</span></summary><p>Para pessoas idosas que desejam mais autonomia, e para familiares, amigos e cuidadores que fazem parte da sua rede de apoio.</p></details><details><summary>Já posso baixar o aplicativo?<span>+</span></summary><p>Esta página apresenta o projeto acadêmico e uma demonstração interativa. Ainda não há um aplicativo publicado para download por aqui.</p></details><details><summary>A localização e o SOS funcionam de verdade?<span>+</span></summary><p>Neste site, esses recursos são simulações para apresentar a proposta. O mapa é ilustrativo, nenhum GPS é acessado e nenhum contato ou serviço de emergência é acionado.</p></details><details><summary>O que acontece com os lembretes que eu criar?<span>+</span></summary><p>Os lembretes da demonstração ficam apenas neste navegador, quando o armazenamento local está disponível. Não geram notificações reais. Use “Reiniciar” para apagar os exemplos adicionados e começar de novo.</p></details><details><summary>Como a acessibilidade aparece no projeto?<span>+</span></summary><p>A demonstração oferece botões amplos, navegação por teclado, opção de aumentar as letras e respeito à preferência por movimento reduzido. O aprendizado faz parte da experiência, com instruções em pequenos passos.</p></details></div></div></section>
-
-    <section class="closing-section"><div class="container closing-inner"><img src="./assets/mark.svg" width="60" height="60" alt=""><h2>O futuro do cuidado<br>começa com conexão.</h2><a class="button button-mint" href="#demonstracao">Explore o SeniorLink <svg class="icon"><use href="#arrow"/></svg></a><span>Cuidado hoje, mais liberdade amanhã.</span></div></section>
+      <div class="playback-controls"><span class="playback-state" id="playback-state">EM MOVIMENTO</span><button class="control-button" id="previous-scene" aria-label="Cena anterior" title="Cena anterior"><svg class="icon"><use href="#back"/></svg></button><button class="control-button play-button" id="play-pause" aria-label="Pausar apresentação" aria-pressed="true" title="Pausar apresentação"><svg class="icon"><use href="#pause"/></svg></button><button class="control-button" id="next-scene" aria-label="Próxima cena" title="Próxima cena"><svg class="icon"><use href="#arrow"/></svg></button></div>
+      <div class="footer-meta"><span>UM PROJETO SOBRE PESSOAS.</span><span>Protótipo visual · Dados fictícios</span><span>SENIORLINK <span class="meta-dot">/</span> UNICID</span></div>
+    </footer>
+    <button id="exit-exhibition" class="exit-exhibition" aria-label="Sair do modo exposição"><svg class="icon"><use href="#close"/></svg><span>Sair da exposição</span></button>
+    <p id="scene-announcement" class="sr-only" role="status" aria-live="off" aria-atomic="true"></p>
+    <div id="showcase-message" class="showcase-message" role="status" aria-live="polite"></div>
+    <noscript><p class="noscript-notice">Ative o JavaScript para a apresentação animada. <a href="./explorar.html">Conheça o projeto.</a></p></noscript>
   </main>
-  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="#inicio"><img src="./assets/mark.svg" width="30" height="30" alt=""><span>Senior<span class="brand-light">Link</span>.</span></a><p>Feito para conectar. Pensado para cuidar.</p><span>Projeto acadêmico · Demonstração</span></div></footer>
-  <dialog id="materials-dialog" class="materials-dialog" aria-labelledby="materials-title"><div class="dialog-header"><div><span class="eyebrow">NOSSA TRAJETÓRIA</span><h2 id="materials-title">Do primeiro MVP à experiência web.</h2></div><button class="icon-button" id="close-materials" aria-label="Fechar materiais"><svg class="icon"><use href="#close"/></svg></button></div><p>O banner e o registro do protótipo que deram origem a esta demonstração.</p><a href="./assets/mvp-banner.jpeg" target="_blank" rel="noopener" class="banner-link"><img src="./assets/mvp-banner.jpeg" alt="Banner original do SeniorLink com 16 telas, incluindo apresentação, acesso, perfil, localização, lembretes, emergência, aprendizado e contatos." loading="lazy"><span>Abrir banner em tamanho original ↗</span></a><div class="video-row"><div><h3>O protótipo em ação</h3><p>Registro original enviado pela equipe. Vídeo sem áudio, com navegação pelo início, pelas telas de apresentação e pela área de aprendizado.</p></div><video controls playsinline preload="none" poster="./assets/video-poster.jpg" aria-label="Vídeo do protótipo original do SeniorLink"><source src="./assets/mvp-video.mp4" type="video/mp4">Seu navegador não suporta vídeo.</video></div></dialog>
 </body>
 </html>

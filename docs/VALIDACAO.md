@@ -24,3 +24,20 @@ Verificações executadas em 28/09/2026, em Microsoft Edge/Chromium no Windows.
 A opção de movimento reduzido é respeitada. A versão inclui rótulos, foco visível, elementos semânticos e navegação por teclado, mas estas verificações não representam uma auditoria formal de conformidade de acessibilidade nem testes em todos os navegadores/dispositivos.
 
 O script e as capturas de QA locais estão em `.reference/`, pasta excluída do Git. O projeto não depende dessas ferramentas para funcionar.
+
+## Apresentação visual para exposição
+
+Verificações da revisão visual em 28/09/2026:
+
+- Seis cenas, avanço e retorno manual, setas do teclado e pausa.
+- Avanço automático após 8,5 segundos e retorno da sexta cena à primeira.
+- Preferência por movimento reduzido inicia a apresentação pausada.
+- Composição das seis telas dentro da área do mockup, sem conteúdo cortado.
+- Layout em 1440×900, 1366×768, 1024×768, 768×1024, 390×844 e 320×740.
+- Encaixe em uma tela nos formatos de notebook, sem rolagem vertical.
+- Visibilidade dos controles e cabeçalho em telas estreitas.
+- Entrada/saída de tela cheia, ocultação após inatividade e restauração ao mover o mouse.
+- Controles ocultos ficam inativos para navegação por teclado até serem restaurados.
+- Acesso ao simulador em `explorar.html`, criação de lembrete e manutenção dos links antigos para seções.
+- Abertura das duas páginas por arquivo local com o navegador offline.
+- Nenhum erro JavaScript ou requisição a serviços externos durante os fluxos testados.

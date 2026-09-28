@@ -11,7 +11,8 @@ const server = createServer(async (req, res) => {
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
     // Serve the presentation only, never .reference, .git or development files.
-    if (pathname !== '/' && pathname !== '/index.html' && pathname !== '/index.js' && !pathname.startsWith('/css/') && !pathname.startsWith('/assets/')) { res.writeHead(404); res.end('Not found'); return; }
+    const publicFiles = ['/', '/index.html', '/explorar.html', '/index.js', '/showcase.js'];
+    if (!publicFiles.includes(pathname) && !pathname.startsWith('/css/') && !pathname.startsWith('/assets/')) { res.writeHead(404); res.end('Not found'); return; }
     if (pathname.split(/[\\/]/).some(part => part.startsWith('.'))) { res.writeHead(403); res.end('Forbidden'); return; }
     const path = resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
     if (!path.startsWith(root + sep)) { res.writeHead(403); res.end('Forbidden'); return; }
