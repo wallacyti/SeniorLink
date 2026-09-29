@@ -1,8 +1,18 @@
 # Créditos de terceiros
 
+## Identidade e imagens do aplicativo SeniorLink
+
+Os arquivos em `assets/app/` são cópias sem alterações dos recursos do repositório [ProgrammerPerederko/SeniorLink](https://github.com/ProgrammerPerederko/SeniorLink), fornecido pela equipe como referência do próprio projeto. Referência consultada em 29/09/2026: commit `0de362c94d625140f221c9d46f076fcaec7d8de6`.
+
+- `seniorlink-logo.jpeg`: `app/src/main/res/drawable/seniorlink_logo.jpeg`.
+- `onboarding-cuidado.png`: `app/src/main/res/drawable/onboarding_cuidado.png`.
+- `onboarding-localizacao.png`: `app/src/main/res/drawable/onboarding_localizacao.png`.
+
+`assets/mark.svg` enquadra o símbolo do JPEG oficial, embutido sem alteração para funcionar offline e como favicon. As composições de `app-screens.js` são adaptações para apresentação web dos layouts XML e componentes Kotlin do projeto. Não são screenshots de uma execução Android. A autoria dos materiais originais pertence à equipe SeniorLink; não foi declarada uma licença adicional para esses materiais.
+
 ## Navigator / awesome-landing-pages
 
-O arquivo `assets/navigator-hand.png` é uma cópia sem alterações de `assets/images/home/phone.png` do template Navigator fornecido pela equipe. As telas do banner SeniorLink são enquadradas em SVG e posicionadas por HTML e CSS sobre a tela da imagem; o asset original foi preservado.
+O arquivo `assets/navigator-hand.png` é uma cópia sem alterações de `assets/images/home/phone.png` do template Navigator fornecido pela equipe. Foi utilizado na versão inicial escura e permanece como referência histórica; a apresentação atual usa uma moldura clara em CSS.
 
 Projeto: https://github.com/PaulleDemon/awesome-landing-pages
 

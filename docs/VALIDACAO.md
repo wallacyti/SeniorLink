@@ -58,3 +58,18 @@ Verificações da correção de fidelidade visual em 28/09/2026:
 - Nenhum erro JavaScript ou falha de carregamento nos fluxos verificados.
 
 O roteiro de verificação está em `.reference/mvp-qa.cjs` e as capturas em `.reference/mvp-*.png`, ambos locais e ignorados pelo Git.
+
+## Identidade branca e azul — 29/09/2026
+
+- Sintaxe de todos os scripts com `npm run check`.
+- Dez composições do aplicativo e alternância para as 16 telas originais do banner, com volta ao app.
+- Carregamento das imagens originais de logo, cuidado e localização.
+- Inspeção visual de todas as composições, abertura e início no notebook e no celular.
+- Layout em 1366×768, 1440×900, 1024×768, 768×1024, 390×844 e 320×740, sem rolagem horizontal; apresentação cabe no notebook sem rolagem vertical.
+- Avanço automático, volta da última tela à primeira, navegação manual e teclado.
+- Preferência por movimento reduzido, tela cheia, ocultação e restauração dos controles.
+- Página secundária com a mesma paleta, criação de lembrete e navegação móvel.
+- Abertura offline por `file://`, incluindo as imagens e troca para o banner.
+- Nenhum erro JavaScript ou falha de recurso nos percursos testados.
+
+Verificação em Edge/Chromium; as composições foram comparadas ao código-fonte e assets, sem compilação ou execução do aplicativo Android. Roteiro local: `.reference/identity-qa.cjs`.

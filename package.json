@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node scripts/serve.mjs",
     "dev": "node scripts/serve.mjs",
-    "check": "node --check index.js && node --check showcase.js && node --check scripts/serve.mjs"
+    "check": "node --check index.js && node --check app-screens.js && node --check showcase.js && node --check scripts/serve.mjs"
   },
   "engines": { "node": ">=18" }
 }

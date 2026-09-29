@@ -1,0 +1,93 @@
+/* Shared SeniorLink identity for the interactive demonstration. */
+:root{--ink:#18334d;--muted:#52677a;--dark:#123b63;--dark-deep:#073b5c;--mint:#e5f2fc;--teal:#1764a5;--paper:#fff;--line:#dce9f4}
+.site-header{color:#123b63;background:#fffffff5;border-bottom:1px solid #e3edf6}
+.brand-light{color:#009f91;font-weight:650}
+.brand-dot{display:none}
+.brand img,.preview-brand img,.app-logo img,.closing-inner>img,.connection-center img{mix-blend-mode:multiply;border-radius:0}
+#site-nav>a:not(.button){color:#365d7e}
+#site-nav>a:not(.button):hover{color:#1764a5}
+.button-mint{background:#1764a5;color:#fff}
+.button-mint:hover{background:#123b63}
+.button-outline{color:#1764a5;border-color:#8bb1d0;background:#fff}
+.button-outline:hover{background:#e5f2fc}
+.hero{background:radial-gradient(ellipse at 85% 48%,#e5f2fc 0%,#f7fbff 47%,#fff 78%);color:#123b63}
+.hero h1>span{color:#1764a5}
+.hero-eyebrow{color:#1764a5}
+.hero-copy>p,.hero-reassurance,.hero-bottom,.hero-bottom a,.hero-actions .text-link{color:#52677a}
+.hero-reassurance strong{color:#123b63}
+.hero-bottom{border-color:#dce9f4}
+.play-circle{border-color:#a5c6df}
+.status-dot{background:#009f91}
+.mini-avatars span{border-color:#fff;background:#e5f2fc;color:#1764a5}
+.mini-avatars span:nth-child(2){background:#e5f6f3;color:#079b91}
+.mini-avatars span:nth-child(3){background:#fff2df;color:#996019}
+.orbit{border-color:#d4e7f7}
+.orbit-dot{background:#79acd5;box-shadow:0 0 0 6px #e5f2fc}
+.phone{background:#f7f9fc;border-color:#fff;box-shadow:0 0 0 2px #c8dbea,10px 22px 50px #123b6325}
+.hero-phone,.demo-phone{box-shadow:0 0 0 2px #c8dbea,14px 28px 60px #123b6325}
+.phone-camera{background:#a7bdcd;width:38px;height:5px;top:10px}
+.phone-handle{background:#a7bdcd}
+.app-greeting h3,.preview-brand,.app-logo{color:#123b63}
+.app-greeting p,.app-greeting small,.art-caption{color:#52677a}
+.app-greeting{margin-bottom:23px}
+.app-tile-grid{gap:12px}
+.app-tile{border-radius:16px}
+.blue,.lilac{background:#e5f2fc!important;color:#1764a5!important}
+.mint{background:#e5f6f3!important;color:#079b91!important}
+.peach{background:#fff2df!important;color:#a56512!important}
+.rose{background:#ffe9e9!important;color:#b83232!important}
+.app-tile small{color:#52677a}
+.preview-sos{background:#ffe9e9;color:#b83232}
+.sos-small{background:#e94b4b}
+.floating-note{background:#fff;box-shadow:0 10px 30px #123b6312;border-color:#dce9f4}
+.note-icon{background:#e5f2fc;color:#1764a5}
+.note-check{background:#e5f6f3;color:#009f91}
+.note-icon .icon{color:inherit}
+.feature-card,.feature-location{background:#fff;border-color:#dce9f4}
+.circle-arrow{color:#1764a5;border-color:#c8dff1}
+.how-section{background:#f2f8fd}
+.steps>li>span{background:#e5f2fc;color:#1764a5;border-color:#c8dff1}
+.steps p{color:#52677a}
+.demo-section{background:#f2f8fd;color:#123b63}
+.demo-section .eyebrow{color:#1764a5}
+.demo-heading p,.demo-disclaimer,.device-label,.demo-under-phone button{color:#52677a}
+.demo-pill{background:#fff;color:#1764a5;border-color:#c8dff1}
+.role-switch{border-color:#c8dff1;background:#e5f2fc}
+.role-switch button{color:#52677a}
+.role-switch button.active{background:#fff;color:#1764a5;box-shadow:0 2px 5px #123b630d}
+.screen-selector{color:#123b63}
+.screen-selector small,.selector-number{color:#52677a}
+.screen-selector.active,.screen-selector:hover{background:#fff;border-color:#c8dff1}
+.screen-selector.active strong,.screen-selector.active .selector-number,.screen-selector.active>.icon{color:#1764a5}
+.demo-under-phone button:hover{color:#1764a5}
+.app-primary{background:#1764a5;color:#fff}
+.app-primary:hover{background:#123b63}
+.app-primary.danger{background:#b83232}
+.app-secondary{border-color:#c8dff1;background:#fff;color:#1764a5}
+.app-filter.active{background:#1764a5;color:#fff}
+.app-filter{background:#e5f2fc;color:#123b63}
+.app-bottom,.preview-bottom{border-top:1px solid #dce9f4;background:#fff}
+.app-bottom button[aria-current],.app-bottom button:hover,.preview-bottom>span:first-child{color:#1764a5}
+.profile-fields>div,.family-summary,.lesson-art{background:#e5f2fc}
+.profile-fields dt,.profile-label,.lesson-copy,.family-summary small{color:#52677a}
+.profile-avatar{border-color:#e5f2fc}
+.lesson-art .icon,.contact-initial{color:#1764a5}
+.contact-initial{background:#e5f2fc}
+.lesson-button{background:#fff;border-color:#dce9f4}
+.project-visual{background:#f1fbfd;overflow:hidden}
+.project-care{position:relative;width:100%;height:340px;object-fit:contain;margin-bottom:25px;mix-blend-mode:multiply}
+.project-visual:before,.project-visual:after{display:none}
+.project-visual .connection-art{display:none}
+.project-visual>span,.academic-tag{color:#1764a5}
+.academic-tag small{color:#52677a}
+.faq-list details{border-color:#dce9f4}
+.faq-list summary span{color:#1764a5}
+.closing-section{background:#e5f2fc;color:#123b63}
+.closing-inner>span{color:#52677a}
+.site-footer{background:#fff;color:#123b63;border-top:1px solid #dce9f4}
+.footer-inner .brand{color:#123b63}
+.site-footer p,.site-footer .footer-inner>span{color:#52677a}
+.menu-toggle{color:#123b63}
+.materials-dialog{color:#123b63;background:#fff}
+@media(max-width:850px){#site-nav{background:#fff;border-color:#dce9f4;box-shadow:0 12px 25px #123b6312}}
+@media(max-width:620px){.project-care{height:280px}}

@@ -11,7 +11,7 @@
   let hideTimer = 0, messageTimer = 0, wakeLock = null;
   // Each viewBox frames a screen in the unchanged 1434 × 1097 MVP banner.
   // The photo's device has different proportions; the full screen fits its display.
-  const scenes = [
+  const bannerScenes = [
     {name:'Splash Screen',crop:[24,58,168,472],heading:'Cuidado hoje.<br><em>Liberdade amanhã.</em>',description:'Mais conexão para todas as fases da vida.',icon:'heart',tone:'connection'},
     {name:'Onboarding 1',crop:[219,58,160,471],heading:'Cuidado que aproxima.<br><em>Em todas as fases.</em>',description:'Cuidado hoje, mais liberdade amanhã.',icon:'users',tone:'connection'},
     {name:'Onboarding 2',crop:[403,58,159,471],heading:'Por perto.<br><em>Mesmo de longe.</em>',description:'Localização em tempo real.',icon:'pin',tone:'location'},
@@ -29,9 +29,15 @@
     {name:'Configurações',crop:[1102,602,148,436],heading:'Do seu jeito.<br><em>No seu ritmo.</em>',description:'Uma experiência pensada para você.',icon:'shield',tone:'autonomy'},
     {name:'Boas-vindas',crop:[1269,601,145,437],heading:'Tudo pronto!<br><em>Vamos começar.</em>',description:'Agora você faz parte do SeniorLink.',icon:'heart',tone:'connection'}
   ];
+  let deck = 'app';
+  let scenes = window.SeniorLinkScreens;
+  let sceneButtons = [];
   const navigation = $('.scene-navigation');
-  navigation.innerHTML = scenes.map((scene,index) => `<button class="scene-button" data-scene="${index}" aria-label="Tela ${index + 1}: ${scene.name}" title="${index + 1}. ${scene.name}"><span class="scene-track"><i></i></span><span class="scene-button-label">${String(index + 1).padStart(2,'0')}</span></button>`).join('');
-  const sceneButtons = [...navigation.querySelectorAll('.scene-button')];
+  function buildNavigation() {
+    navigation.innerHTML = scenes.map((scene,index) => `<button class="scene-button" data-scene="${index}" aria-label="Tela ${index + 1}: ${scene.name}" title="${index + 1}. ${scene.name}"><span class="scene-track"><i></i></span><span class="scene-button-label"><b>${String(index + 1).padStart(2,'0')}</b><span>${scene.short || scene.name}</span></span></button>`).join('');
+    sceneButtons = [...navigation.querySelectorAll('.scene-button')];
+  }
+  buildNavigation();
 
   function originalScreen(scene) {
     return `<svg class="mvp-screen" viewBox="${scene.crop.join(' ')}" preserveAspectRatio="none" aria-hidden="true"><image href="./assets/mvp-banner.jpeg" width="1434" height="1097"/></svg>`;
@@ -56,17 +62,17 @@
     lastFrame = 0;
     const scene = scenes[current];
     stage.dataset.scene = String(current);
-    stage.dataset.tone = scene.tone;
-    $('#scene-eyebrow').textContent = 'MAIS CONEXÃO PARA TODAS AS FASES DA VIDA';
+    stage.dataset.deck = deck;
+    $('#scene-eyebrow').textContent = 'CUIDADO, AUTONOMIA E CONEXÃO';
     $('#scene-heading').innerHTML = scene.heading;
     $('#scene-description').textContent = scene.description;
-    $('#scene-signature').textContent = 'SENIORLINK. TECNOLOGIA QUE APROXIMA.';
+    $('#scene-signature').textContent = 'FEITO PARA APROXIMAR GERAÇÕES.';
     $('#floating-icon').innerHTML = icon(scene.icon);
-    $('#floating-kicker').textContent = `TELA ${String(current + 1).padStart(2,'0')} DO MVP`;
+    $('#floating-kicker').textContent = deck === 'app' ? 'UMA CONEXÃO QUE CUIDA' : `TELA ${String(current + 1).padStart(2,'0')} DO MVP`;
     $('#floating-title').textContent = scene.name;
     $('#rail-label').textContent = scene.name.toUpperCase();
     $('#rail-number').textContent = `${String(current + 1).padStart(2,'0')} / ${scenes.length}`;
-    $('#handheld').setAttribute('aria-label',`Celular na mão mostrando ${scene.name.toLowerCase()} no SeniorLink. Tela original do banner do MVP. Demonstração visual.`);
+    $('#handheld').setAttribute('aria-label',`Celular mostrando ${scene.name.toLowerCase()} no SeniorLink. ${deck === 'app' ? 'Recriação web baseada nos layouts do aplicativo Android.' : 'Tela original do banner do MVP.'} Demonstração visual.`);
     $('#scene-announcement').textContent = `Tela ${current + 1} de ${scenes.length}: ${scene.name}. ${scene.description}`;
     sceneButtons.forEach((button,i) => {
       button.classList.toggle('active',i === current);
@@ -79,8 +85,8 @@
     const container = $('#screen-content');
     [...container.children].forEach(layer => { layer.classList.remove('shown'); layer.classList.add('leaving'); });
     const layer = document.createElement('div');
-    layer.className = 'screen-layer mvp-layer';
-    layer.innerHTML = originalScreen(scene);
+    layer.className = `screen-layer ${deck === 'banner' ? 'mvp-layer' : 'native-layer'}`;
+    layer.innerHTML = deck === 'banner' ? originalScreen(scene) : scene.render();
     container.append(layer);
     if (!animate || reducedMotion.matches) layer.classList.add('shown');
     else { void layer.offsetWidth; layer.classList.add('shown'); }
@@ -169,7 +175,24 @@
     scheduleHide();
   }
 
-  sceneButtons.forEach((button,index) => button.addEventListener('click',() => selectScene(index)));
+  navigation.addEventListener('click',event => {
+    const button = event.target.closest('.scene-button');
+    if (button) selectScene(Number(button.dataset.scene));
+  });
+  document.querySelectorAll('.deck-button').forEach(button => button.addEventListener('click',() => {
+    if (button.dataset.deck === deck) return;
+    deck = button.dataset.deck;
+    scenes = deck === 'app' ? window.SeniorLinkScreens : bannerScenes;
+    document.querySelectorAll('.deck-button').forEach(item => {
+      const active = item.dataset.deck === deck;
+      item.classList.toggle('active',active);
+      item.setAttribute('aria-pressed',String(active));
+    });
+    $('#deck-caption').textContent = deck === 'app' ? 'APRESENTAÇÃO DO APLICATIVO · PRÉVIA VISUAL' : 'TELAS ORIGINAIS DO BANNER · PRÉVIA VISUAL';
+    $('#screen-content').replaceChildren();
+    buildNavigation();
+    selectScene(0);
+  }));
   $('#previous-scene').addEventListener('click',() => selectScene(current - 1));
   $('#next-scene').addEventListener('click',() => selectScene(current + 1));
   $('#play-pause').addEventListener('click',() => { playing = !playing; syncPlayback(); revealControls(); });

@@ -1,6 +1,16 @@
 # Análise e transformação: Navigator → SeniorLink
 
-## Formato final para o balcão
+## Identidade do aplicativo — revisão de 29/09/2026
+
+A referência principal é agora o [repositório Android da equipe](https://github.com/ProgrammerPerederko/SeniorLink), no commit `0de362c94d625140f221c9d46f076fcaec7d8de6`. Foram conferidos os layouts XML de abertura/onboarding, `HomeScreen.kt`, `FeatureScreens.kt`, `Color.kt` e `Theme.kt`.
+
+O repositório contém três imagens de produto: logo, cuidado entre gerações e ilustração de localização. Não contém uma coleção nova de screenshots das 16 telas. As três imagens foram copiadas sem alterações para `assets/app/`. A marca para ícones é um enquadramento SVG com o JPEG original embutido; não há uma nova logo desenhada.
+
+O site usa branco, azul-marinho `#123B63`, azul `#1764A5`, azul-claro `#E5F2FC` e verde-água `#009F91`, extraídos dos layouts e componentes do app. A apresentação principal recria em HTML dez telas descritas pelo código Android. Isso preserva a leitura dos textos em telas maiores e incorpora os assets novos, sem afirmar que são capturas reais ou que o Android está sendo executado no navegador.
+
+O celular é desenhado em CSS, com moldura clara e movimento discreto. O modo “MVP do banner” continua com as 16 telas originais. O simulador secundário recebeu a mesma paleta e ajustes na tela inicial, preservando seus fluxos locais. As duas páginas mantêm funcionamento offline, modo exposição e respeito à preferência por movimento reduzido.
+
+## Histórico do formato para o balcão — 28/09/2026
 
 A página inicial foi ajustada ao uso em exposição: uma composição de tela inteira com fundo preto, luz ambiente discreta, celular na mão e as 16 telas originais do banner em sequência automática. O mockup original do Navigator foi reaproveitado sem editar o bitmap. Cada tela do banner é enquadrada com `viewBox` em SVG e dimensionada sobre o aparelho; logo, ilustrações e conteúdo vêm diretamente da imagem fornecida. Os arquivos de imagem originais não são alterados. O crédito e a licença estão em `THIRD_PARTY_NOTICES.md`.
 

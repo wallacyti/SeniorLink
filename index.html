@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#070909">
+  <meta name="theme-color" content="#ffffff">
   <title>SeniorLink — Cuidado em movimento</title>
   <meta name="description" content="Cuidado hoje, mais liberdade amanhã. Conheça o SeniorLink em uma apresentação visual sobre conexão, cuidado e autonomia.">
   <meta property="og:title" content="SeniorLink — Cuidado hoje, mais liberdade amanhã">
@@ -11,6 +11,7 @@
   <meta property="og:type" content="website">
   <link rel="icon" href="./assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./css/showcase.css">
+  <script src="./app-screens.js" defer></script>
   <script src="./showcase.js" defer></script>
 </head>
 <body>
@@ -40,40 +41,41 @@
 </defs></svg>
 
   <a class="skip-link" href="#showcase-controls">Pular para os controles da apresentação</a>
-  <main class="showcase" id="showcase" data-scene="0">
-    <div class="ambient" aria-hidden="true"><div class="ambient-light"></div><div class="ambient-grid"></div><span class="ambient-word">SENIORLINK</span></div>
+  <main class="showcase" id="showcase" data-scene="0" data-deck="app">
+    <div class="ambient" aria-hidden="true"><div class="ambient-light"></div><svg class="ambient-wave" viewBox="0 0 1440 250" preserveAspectRatio="none"><path d="M0 180Q350 30 730 155T1440 60V250H0Z" fill="#e5f2fc"/><path d="M0 235Q430 75 850 195T1440 140V250H0Z" fill="#f1f8fd"/></svg></div>
     <header class="showcase-header exhibition-ui">
-      <a class="brand" href="./index.html" aria-label="SeniorLink — início"><img src="./assets/mark.svg" width="34" height="34" alt=""><span>Senior<span>Link</span><b>.</b></span></a>
-      <span class="header-caption">TECNOLOGIA QUE APROXIMA</span>
+      <a class="brand" href="./index.html" aria-label="SeniorLink — início"><svg class="brand-symbol" viewBox="350 185 550 555" aria-hidden="true"><image href="./assets/app/seniorlink-logo.jpeg" width="1254" height="1254"/></svg><span>Senior<span>Link</span></span></a>
+      <span class="header-caption">Mais conexão. Mais cuidado.</span>
       <div class="header-actions"><a href="./explorar.html#demonstracao" class="explore-link">Explorar o app <svg class="icon"><use href="#arrow"/></svg></a><button id="exhibition-button" class="exhibition-button" aria-pressed="false"><svg class="icon"><use href="#expand"/></svg><span>Modo exposição</span></button></div>
     </header>
 
     <section class="stage" aria-label="Apresentação visual do SeniorLink">
       <div class="stage-copy" id="stage-copy">
-        <div class="scene-eyebrow"><span class="live-dot"></span><span id="scene-eyebrow">MAIS CONEXÃO. MAIS VIDA.</span></div>
-        <h1 id="scene-heading">Cuidado hoje.<br><em>Liberdade amanhã.</em></h1>
+        <div class="scene-eyebrow"><span class="live-dot"></span><span id="scene-eyebrow">CUIDADO, AUTONOMIA E CONEXÃO</span></div>
+        <h1 id="scene-heading">Cuidado hoje.<br><em>Mais liberdade amanhã.</em></h1>
         <p id="scene-description">Mais conexão para todas as fases da vida.</p>
-        <div class="scene-signature"><span class="signature-line"></span><span id="scene-signature">SIMPLES PARA USAR. FEITO PARA CUIDAR.</span></div>
+        <div class="deck-switch exhibition-ui" aria-label="Escolher apresentação"><button class="deck-button active" data-deck="app" aria-pressed="true">App atual</button><button class="deck-button" data-deck="banner" aria-pressed="false">MVP do banner</button></div>
+        <div class="scene-signature"><span class="signature-line"></span><span id="scene-signature">FEITO PARA APROXIMAR GERAÇÕES.</span></div>
       </div>
 
       <div class="device-stage" id="device-stage">
         <div class="device-halo" aria-hidden="true"></div><div class="device-shadow" aria-hidden="true"></div>
-        <div class="device-entrance"><div class="handheld" id="handheld" role="img" aria-label="Celular na mão exibindo a apresentação do SeniorLink">
-          <img class="hand-image" src="./assets/navigator-hand.png" alt="" width="1080" height="1080" draggable="false" fetchpriority="high">
+        <div class="device-entrance"><div class="handheld" id="handheld" role="img" aria-label="Celular exibindo a apresentação do SeniorLink">
+
           <div class="display-viewport" id="display-viewport" aria-hidden="true"><div class="display-canvas" id="display-canvas">
-            <div class="screen-content" id="screen-content"><div class="screen-layer mvp-layer shown"><svg class="mvp-screen" viewBox="24 58 168 472" preserveAspectRatio="none" aria-hidden="true"><image href="./assets/mvp-banner.jpeg" width="1434" height="1097"/></svg></div></div>
+            <div class="screen-content" id="screen-content"><div class="screen-layer shown"><div class="native-screen"><div class="native-splash"><img src="./assets/app/seniorlink-logo.jpeg" alt=""></div></div></div></div>
           </div></div>
         </div></div>
-        <div class="floating-feature" id="floating-feature" aria-hidden="true"><span class="floating-feature-icon" id="floating-icon"><svg class="icon"><use href="#heart"/></svg></span><span><small id="floating-kicker">TELA 01 DO MVP</small><strong id="floating-title">Splash Screen</strong></span><span class="feature-spark">✦</span></div>
+        <div class="floating-feature" id="floating-feature" aria-hidden="true"><span class="floating-feature-icon" id="floating-icon"><svg class="icon"><use href="#heart"/></svg></span><span><small id="floating-kicker">BOAS-VINDAS</small><strong id="floating-title">Uma conexão que cuida.</strong></span><span class="feature-spark">✦</span></div>
       </div>
 
-      <div class="scene-rail" aria-hidden="true"><span id="rail-label">SPLASH SCREEN</span><span class="rail-line"></span><span id="rail-number">01 / 16</span></div>
+      <div class="scene-rail" aria-hidden="true"><span id="rail-label">SPLASH SCREEN</span><span class="rail-line"></span><span id="rail-number">01 / 10</span></div>
     </section>
 
     <footer class="showcase-footer exhibition-ui" id="showcase-controls" aria-label="Controles da apresentação">
-      <nav class="scene-navigation" aria-label="Escolher uma das 16 telas do MVP"></nav>
+      <nav class="scene-navigation" aria-label="Escolher tela da apresentação"></nav>
       <div class="playback-controls"><span class="playback-state" id="playback-state">EM MOVIMENTO</span><button class="control-button" id="previous-scene" aria-label="Tela anterior" title="Tela anterior"><svg class="icon"><use href="#back"/></svg></button><button class="control-button play-button" id="play-pause" aria-label="Pausar apresentação" aria-pressed="true" title="Pausar apresentação"><svg class="icon"><use href="#pause"/></svg></button><button class="control-button" id="next-scene" aria-label="Próxima tela" title="Próxima tela"><svg class="icon"><use href="#arrow"/></svg></button></div>
-      <div class="footer-meta"><span>TELAS ORIGINAIS DO MVP · DEMONSTRAÇÃO VISUAL</span><span id="current-screen-label">01 / 16 · Splash Screen</span><span>SENIORLINK <span class="meta-dot">/</span> UNICID</span></div>
+      <div class="footer-meta"><span id="deck-caption">APRESENTAÇÃO DO APLICATIVO · PRÉVIA VISUAL</span><span id="current-screen-label">01 / 10 · Boas-vindas</span><span>SENIORLINK <span class="meta-dot">/</span> UNICID</span></div>
     </footer>
     <button id="exit-exhibition" class="exit-exhibition" aria-label="Sair do modo exposição"><svg class="icon"><use href="#close"/></svg><span>Sair da exposição</span></button>
     <p id="scene-announcement" class="sr-only" role="status" aria-live="off" aria-atomic="true"></p>
