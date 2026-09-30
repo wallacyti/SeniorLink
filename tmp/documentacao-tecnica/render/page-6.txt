@@ -1,0 +1,36 @@
+SeniorLink  |  Documento técnico  |  6 
+5 Tag e próximos passos 
+Se tag significa um marcador no mapa 
+Nesse caso, a tag pode ser um ícone associado ao identificador do usuário, colocado sobre o mapa na última 
+posição recebida. Não é necessário inventar uma API separada de tag: o SDK de mapas já oferece 
+marcadores e associação de dados. A origem das coordenadas e o controle de acesso continuam sendo 
+responsabilidades de outros componentes. 
+Referências: Marcadores e dados associados 
+Se tag significa um dispositivo físico 
+A solução depende do hardware escolhido. Uma tag Bluetooth Low Energy pode comunicar dados a um 
+celular ou receptor próximo. Bluetooth, sozinho, não transforma a tag em um rastreador GPS com internet 
+própria. O Android oferece APIs para localizar dispositivos BLE e trocar dados, conforme os serviços e 
+protocolos que o dispositivo disponibiliza. 
+Para acompanhar alguém à distância, seria necessário definir como a posição será obtida e transmitida: por 
+um aparelho próximo, por infraestrutura compatível ou por um dispositivo com recursos próprios. Isso 
+depende de alcance, bateria, rede e documentação do fabricante. Nenhum modelo de tag, protocolo ou SDK 
+de fabricante foi identificado nos projetos analisados. 
+Referências: Visão geral de Bluetooth Low Energy no Android 
+Ordem sugerida de evolução 
+• Consolidar os dados locais: salvar perfil, contatos e lembretes de forma persistente, com tratamento de 
+campos e recuperação ao reabrir o aplicativo. 
+• Validar localização com o app aberto: solicitar permissão e apresentar posição, precisão, horário e 
+estados de erro. 
+• Adicionar contas e vínculo de confiança: definir quem pode consultar cada usuário e como o 
+compartilhamento pode ser encerrado. 
+• Sincronizar dois aparelhos: enviar e receber a última posição, testar perda de rede e distinguir 
+informação recente de informação desatualizada. 
+• Implementar e testar lembretes e pedidos de ajuda: definir agendamento, destinatários e 
+comportamento de falha. Uma mensagem enviada não comprova que houve atendimento. 
+• Avaliar segundo plano e tag física depois da definição do hardware e das necessidades reais de uso. 
+Critérios para considerar a evolução validada 
+Verificar permissões negadas, aplicativo fechado, falta de rede, dados antigos e restrição de acesso a outro 
+usuário. Avaliar também leitura das telas, tamanho dos controles e compreensão das ações com o público 
+do projeto. O código atual não demonstra detecção automática de quedas nem resultados medidos de 
+redução de acidentes. 
+ 

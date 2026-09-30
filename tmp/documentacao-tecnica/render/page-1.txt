@@ -1,0 +1,31 @@
+SeniorLink  |  Documento técnico  |  1 
+SeniorLink 
+Documento técnico para a apresentação 
+Análise do código disponível em 29 de setembro de 2026 
+Material de apoio para explicar como o projeto foi desenvolvido, quais recursos existem e como as 
+integrações futuras poderiam funcionar. A análise contempla o aplicativo Android e o site de exposição, que 
+são projetos separados. 
+A proposta do projeto 
+O SeniorLink propõe apoiar a segurança e a autonomia da pessoa idosa por meio de localização 
+compartilhada, informações úteis em emergências, lembretes, contatos de confiança e inclusão digital. O 
+protótipo atual permite apresentar essa proposta e percorrer parte das telas. 
+O que a equipe pode afirmar hoje 
+• Existe um aplicativo Android nativo escrito em Kotlin, com telas em XML e Jetpack Compose, preparado 
+para execução pelo Android Studio. 
+• A navegação, os campos do perfil, a lista temporária de lembretes, os tutoriais e a confirmação 
+demonstrativa de emergência aparecem no código. 
+• Há também um site independente em HTML, CSS e JavaScript para exibição no notebook, com recursos 
+locais e simulações de uso. 
+• Localização real, compartilhamento entre aparelhos, autenticação, alertas e integração com uma tag 
+física são etapas futuras. Não há uma API externa desses serviços conectada nesta versão. 
+Uma fala técnica de aproximadamente um minuto 
+“O SeniorLink é um protótipo de aplicativo Android pensado para apoiar a pessoa idosa sem tirar sua 
+autonomia. O aplicativo foi desenvolvido em Kotlin e combina telas XML com Jetpack Compose. Hoje já 
+conseguimos apresentar a navegação, os campos de perfil, lembretes temporários e orientações de uso do 
+celular. Também temos um site para demonstrar a experiência no evento. A próxima etapa técnica é 
+conectar a localização do aparelho, exibir essa informação no mapa e permitir o acesso de um responsável 
+autorizado. Para isso, estamos estudando serviços de localização, mapas e sincronização de dados. Essas 
+integrações ainda não estão prontas no protótipo.” 
+As afirmações sobre o código estão detalhadas nas páginas 2 a 4. As páginas 5 e 6 apresentam possibilidades 
+técnicas, e a página 7 reúne respostas para a banca. A base da análise está registrada na página 8. 
+ 

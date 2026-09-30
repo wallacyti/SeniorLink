@@ -1,0 +1,29 @@
+SeniorLink  |  Documento técnico  |  3 
+2 Funcionamento atual do aplicativo 
+A abertura passa por SplashActivity e pelas três Activities de onboarding. Essas telas usam XML e Intent para 
+avançar ou pular. A MainActivity abre a área em Compose. (A2) 
+Dentro dessa área, uma variável chamada telaAtual seleciona a tela com uma expressão when. Os dados dos 
+formulários e lembretes usam remember e mutableStateOf: ficam na memória da interface. Não há camada 
+de banco de dados, serviço remoto ou arquitetura MVVM estruturada identificada nessa versão. 
+Recurso Comportamento encontrado no código 
+Abertura e início Telas de apresentação, opção de pular e atalhos para as funções do aplicativo. 
+Perfil Campos editáveis de identificação, saúde e contato. O botão de salvar ainda não tem 
+ação; os dados não são persistidos. 
+Localização Tela de proposta. Os botões ainda não consultam GPS, não exibem um mapa conectado e 
+não compartilham coordenadas. 
+Lembretes Permite adicionar e excluir itens de uma lista temporária. Ao sair da tela, a lista é perdida. 
+Não agenda alarmes ou notificações. 
+Aprender Quatro orientações textuais expansíveis: tamanho das letras, ligação, Wi-Fi e mensagens. 
+Emergência Abre uma confirmação informando que o protótipo não envia alertas nem faz chamadas. 
+Contato de confiança ainda não é configurado. 
+Login e cadastro Não foram encontrados fluxos de autenticação implementados. As telas conceituais do 
+banner não comprovam essa função no app. 
+ 
+APIs já presentes 
+API é a interface pela qual um programa utiliza funções de outro componente. O aplicativo já usa APIs locais 
+do Android e de bibliotecas, como Intent, Activity, tratamento de barras do sistema e funções de Compose. 
+Isso é diferente de ter uma API de localização ou um servidor externo integrado. 
+A leitura dos fontes, das dependências e do manifesto não encontrou integração com Firebase, Google 
+Maps, cliente de localização, Bluetooth, cliente HTTP ou banco persistente. O manifesto principal também 
+não declara permissões de localização. (A1, A3) 
+ 

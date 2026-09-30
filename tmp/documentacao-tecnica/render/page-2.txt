@@ -1,0 +1,33 @@
+SeniorLink  |  Documento técnico  |  2 
+1 Tecnologias do aplicativo 
+O aplicativo usa recursos nativos do Android. Os arquivos de aplicação examinados são Kotlin, mesmo 
+estando dentro de uma pasta chamada java. Não foram encontrados arquivos de código-fonte .java nessa 
+aplicação. (A1, A2) 
+Tecnologia ou ferramenta Uso identificado e versão declarada 
+Kotlin Linguagem dos 13 arquivos .kt da aplicação. O plugin de Compose declara 2.2.10 
+no catálogo. 
+Jetpack Compose Interface da área principal. Compose BOM 2026.02.01; UI, Graphics, Preview e 
+Material 3 geridos pelo BOM. 
+XML e Android Views Layouts da abertura e das três telas de apresentação inicial. 
+AppCompat e ConstraintLayout Apoio às telas XML. AppCompat 1.6.1 e ConstraintLayout 2.1.4. 
+Activity e Core KTX Integração de telas e utilitários Android. Activity Compose 1.8.0; Activity KTX 
+1.13.0; Core KTX 1.10.1. 
+Lifecycle e Material Dependências declaradas: Lifecycle Runtime KTX 2.6.1 e Material Components 
+1.10.0. 
+Gradle e plugin Android Automação da compilação. Gradle Wrapper 9.5.0 e Android Gradle Plugin 9.3.3. 
+Android SDK compileSdk e targetSdk 37; minSdk 24, correspondente ao Android 7.0. 
+Java e JDK Compatibilidade Java 11 nas opções de compilação. A configuração do daemon 
+Gradle solicita JDK 25. 
+Android Studio e ADB Ambiente de desenvolvimento e ferramenta de comunicação com o aparelho para 
+instalar e abrir o APK. 
+Ferramentas de teste JUnit 4.13.2, AndroidX Test JUnit 1.1.5, Espresso 3.5.1 e bibliotecas de teste 
+Compose. 
+Git e GitHub Controle de versões e repositórios. O repositório local do Android contém as 
+branches main e develop. 
+ 
+Versões declaradas: os números acima vêm dos arquivos do projeto. O BOM e a resolução de dependências 
+do Gradle podem selecionar outras versões transitivas. O número 2.2.10 identifica o plugin Compose 
+declarado; não é uma auditoria de todos os compiladores e artefatos resolvidos. 
+Resposta sobre Java: “O nosso código de aplicação está em Kotlin. Java aparece no ecossistema e nas 
+configurações de compilação; isso não significa que desenvolvemos parte das telas em Java.” 
+ 

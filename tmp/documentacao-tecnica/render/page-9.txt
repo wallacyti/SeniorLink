@@ -1,0 +1,3 @@
+SeniorLink  |  Documento técnico  |  9 
+Escopo deste trabalho: leitura dos projetos e produção de documentação. Nenhum recurso, dependência ou 
+integração foi acrescentado ao aplicativo ou ao site. 

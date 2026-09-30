@@ -1,0 +1,31 @@
+SeniorLink  |  Documento técnico  |  4 
+3 Site de exposição e desenvolvimento 
+Como foi feita a versão web 
+O site é um projeto independente do APK. Usa HTML para a estrutura, CSS para o visual e JavaScript para as 
+interações. As ilustrações, imagens e vídeos usados na exibição estão armazenados na pasta do projeto. O 
+package.json não declara dependências de execução ou um framework web. (W1) 
+A página inicial alterna dez composições baseadas nas telas Android ou as 16 telas do banner. Tem 
+reprodução automática, pausa, setas e modo de exposição. As composições web são adaptações para 
+apresentação, e não capturas de uma execução real do aplicativo. (W2) 
+A página Explorar o app contém um simulador com perfil fictício, localização fixa, lembretes, tutoriais e SOS 
+demonstrativo. Não consulta GPS nem envia mensagens ou realiza chamadas. Os lembretes podem ser 
+guardados no localStorage do navegador, quando ele está disponível; esse armazenamento é diferente da 
+lista temporária do aplicativo Android. (W3) 
+APIs do navegador e uso sem internet 
+O site utiliza o DOM para atualizar a página, localStorage para os lembretes do simulador, Fullscreen API 
+para tela cheia e Screen Wake Lock API quando o navegador a oferece. São recursos do navegador, não 
+serviços remotos de rastreamento. 
+Para a exibição local, o index.html pode ser aberto no navegador com os arquivos da pasta preservados. Há 
+também um servidor opcional em Node.js 18 ou superior, usando módulos nativos e a porta local 4173. Ele 
+entrega os arquivos do site; não é um backend de contas, localização ou saúde. Recursos como tela cheia, 
+tela ativa e armazenamento dependem do navegador. 
+GitHub Pages hospeda a versão pública estática. Ter uma cópia local permite a apresentação sem internet; 
+isso não acrescenta rastreamento real ou comunicação entre celulares ao protótipo. (W1, W4) 
+Referências visuais e apoio de IA 
+O registro de créditos do site identifica o template Navigator como referência da versão inicial e os recursos 
+visuais do repositório da equipe como base da identidade atual. Os créditos e a licença do material de 
+terceiros estão em THIRD_PARTY_NOTICES.md. (W5) 
+O histórico de prompts e respostas do Claude não foi fornecido para esta análise. Portanto, não é possível 
+listar com precisão “tudo que o Claude fez” ou atribuir cada arquivo a essa ferramenta. Este documento 
+verifica o resultado presente nos projetos; o grupo deve relatar o uso de IA conforme o seu histórico real. 
+ 

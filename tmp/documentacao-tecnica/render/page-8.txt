@@ -1,0 +1,35 @@
+SeniorLink  |  Documento técnico  |  8 
+7 Base da análise e limites 
+A documentação descreve as cópias locais consultadas em 29/09/2026. Os identificadores abaixo permitem 
+conferir de qual versão as informações foram extraídas. As propostas de integração foram fundamentadas 
+nas páginas oficiais vinculadas nas páginas 5 e 6, consultadas na mesma data. 
+Projeto Android 
+Cópia local: Documents/SeniorLink-Android. Commit de referência: 
+6314373c7599b4bbc4a4e5410a56de746f724fba. Pacote: com.seniorlink.app; versão declarada: 1.0, código 
+1. 
+Referências: Repositório fornecido pela equipe · Cópia de trabalho de Wallacy 
+A1  Configuração. app/build.gradle.kts; gradle/libs.versions.toml; gradle/wrapper/gradle-
+wrapper.properties; gradle/gradle-daemon-jvm.properties. Base para SDKs, dependências, ferramentas e 
+versões declaradas. 
+A2  Interface e navegação. app/src/main/java/com/seniorlink/app/: MainActivity.kt, SplashActivity.kt e 
+activity_onboarding2.kt, activity_onboarding3.kt, activity_onboarding4.kt; layouts em 
+app/src/main/res/layout/. Base para o fluxo e a combinação XML/Compose. 
+A3  Funcionalidades. ui/screens/FeatureScreens.kt e HomeScreen.kt, dentro da pasta de código acima; 
+app/src/main/AndroidManifest.xml. Base para estado temporário, botões demonstrativos e ausência de 
+integrações de localização, alertas e autenticação. 
+A4  Alcance dos testes. ExampleUnitTest.kt testa a soma 2 + 2. ExampleInstrumentedTest.kt verifica o nome 
+do pacote. Esses testes de exemplo não validam localização, alertas, persistência ou usabilidade. Nesta 
+análise documental não foram executados builds, testes ou instalações. 
+Site de exposição 
+Cópia local: Documents/SeniorLink. Commit de referência: 2ce8d2dbc6f43ac30b36bceb65bebca94b904dda. 
+Referências: Repositório do site · Endereço da apresentação 
+W1  Tecnologias. index.html, explorar.html, css/ e package.json. Estrutura HTML/CSS/JavaScript e ausência 
+de dependências de execução declaradas. 
+W2  Apresentação. showcase.js e app-screens.js. Sequência de cenas, composições visuais e modo de 
+exposição. 
+W3  Simulador. index.js. Interações, exemplos fictícios, localStorage e ações simuladas de localização e 
+emergência. 
+W4  Execução local. scripts/serve.mjs e README.md. Servidor de arquivos em 127.0.0.1, porta 4173, e 
+orientação de abertura local. 
+W5  Créditos. THIRD_PARTY_NOTICES.md. Origem dos recursos visuais SeniorLink e referência ao template 
+Navigator. 

@@ -1,0 +1,33 @@
+SeniorLink  |  Documento técnico  |  5 
+4 Proposta de integração de APIs 
+As opções abaixo formam uma sugestão de evolução técnica. Nenhuma delas foi integrada ao projeto nesta 
+análise, e a escolha definitiva de fornecedores ainda depende da equipe. 
+Obter a posição do aparelho 
+O Fused Location Provider, do Google Play services, é uma opção para receber posições e atualizações de 
+localização no Android. O aplicativo precisaria solicitar a permissão adequada, tratar recusas, verificar a 
+precisão e a data da leitura e encerrar atualizações quando não forem necessárias. Uma posição antiga não 
+deve aparecer como atual. 
+Referências: FusedLocationProviderClient · Permissões de localização 
+Mostrar a posição no mapa 
+O Maps SDK for Android pode exibir um mapa com marcador na latitude e longitude recebidas. O marcador 
+é a representação visual de uma posição; ele não descobre sozinho onde a pessoa está. A configuração do 
+serviço exige projeto Google Cloud, habilitação do SDK, chave de API e os requisitos de conta e faturamento 
+do provedor. 
+Referências: Marcadores no Maps SDK · Configuração do Maps SDK 
+Compartilhar com o responsável 
+Uma possibilidade é combinar Firebase Authentication, para identificar os usuários, com Firebase Realtime 
+Database, para armazenar e sincronizar a última posição. As regras de acesso precisariam permitir que 
+somente a pessoa idosa e os responsáveis vinculados consultassem esses dados. Estar autenticado, por si só, 
+não deve dar acesso à localização de outras pessoas. 
+Referências: Leitura e gravação no Android · Regras de acesso e autenticação 
+Fluxo proposto para dois celulares 
+1. A pessoa idosa autoriza a localização e escolhe com quem compartilhar. 
+2. Seu aparelho obtém uma posição com horário e precisão. 
+3. O aplicativo envia os dados ao serviço com controle de acesso. 
+4. O celular do responsável autorizado recebe a atualização. 
+5. O mapa mostra a posição e informa quando ela foi atualizada. 
+Esse fluxo é uma proposta de arquitetura. A atualização remota precisa de conectividade para chegar ao 
+outro aparelho. Sem comunicação, a tela deve identificar a última informação recebida. A primeira validação 
+pode usar o app aberto; funcionamento em segundo plano exige uma etapa própria de permissões, 
+consumo de bateria e restrições do Android. 
+ 

@@ -1,0 +1,36 @@
+SeniorLink  |  Documento técnico  |  7 
+6 Respostas para a apresentação 
+Como vocês desenvolveram o aplicativo? 
+“O aplicativo é nativo Android, escrito em Kotlin. A abertura usa layouts XML e a área principal usa Jetpack 
+Compose. O Gradle organiza a compilação e as bibliotecas do projeto.” 
+Vocês usaram Java também? 
+“O código de aplicação que analisamos está em Kotlin. Há configurações de compatibilidade Java e uso do 
+JDK nas ferramentas, mas não encontramos arquivos de aplicação escritos em Java.” 
+Qual API de localização já está funcionando? 
+“Ainda não temos essa integração. A tela atual apresenta a proposta. Uma opção de evolução é obter a 
+posição pelo Fused Location Provider, exibi-la no Maps SDK e sincronizá-la com o responsável autorizado.” 
+Onde os dados ficam salvos? 
+“No Android, os campos e lembretes atuais ficam temporariamente na memória da tela. Não há banco 
+persistente conectado. No simulador web, apenas os lembretes podem ficar no armazenamento local do 
+navegador.” 
+O botão SOS liga ou manda mensagem? 
+“Nesta versão ele demonstra o fluxo e informa que não há envio real. A integração futura precisa definir o 
+destinatário e testar o que acontece quando não há rede ou quando a mensagem não é recebida.” 
+Como seria a tag para mapear a pessoa idosa? 
+“Se for um ícone no mapa, é um marcador visual. Se for um aparelho físico, precisamos escolher o hardware 
+e estudar sua comunicação. Uma tag Bluetooth depende de um receptor compatível para transmitir dados.” 
+Funciona sem internet? 
+“As telas locais do protótipo e o site copiado no notebook podem ser apresentados sem internet. 
+Compartilhar novas posições com um familiar distante exige um meio de comunicação entre os aparelhos.” 
+Qual é a diferença entre o site e o aplicativo? 
+“O site é uma apresentação e um simulador em HTML, CSS e JavaScript. O aplicativo é o projeto Android em 
+Kotlin. Eles não estão sincronizados e podem demonstrar recursos em estágios diferentes.” 
+Foi desenvolvido com inteligência artificial? 
+A equipe deve explicar o uso real das ferramentas e o trabalho de revisão que realizou. Este levantamento 
+não recebeu o histórico do Claude, portanto não confirma quais trechos foram gerados por ele. Não atribuir 
+a uma IA recursos ou decisões sem registro. 
+O aplicativo já foi validado para uso real? 
+“Estamos na fase de protótipo. A preparação técnica para executar o aplicativo não equivale a validar 
+rastreamento, emergências ou uso com idosos. Essas funções ainda precisam ser implementadas e 
+testadas.” 
+ 
